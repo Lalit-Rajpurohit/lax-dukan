@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sri Krishna Decoration — Car & Glass Films, Wallpapers & Interior Decor | Bengaluru</title>
-  <meta name="description" content="Sri Krishna Decoration, Bengaluru — authorised dealer of Garware, 3M, LX Hausys & Avery Dennison. Car & glass sun-control films, paint protection (PPF), frosted/privacy films, wallpapers and interior decor. 5★ rated." />
+  <meta name="description" content="Sri Krishna Decoration, Bengaluru — authorised dealer of Garware, 3M, LX Hausys & Avery Dennison. Sun-control window films, paint protection (PPF), frosted/privacy films, designer wallpapers and interior decor. 5★ rated." />
 
   <!-- No-flash theme: default LIGHT, dark only if user chose it -->
   <script>
     if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark');
   </script>
 
-  <!-- Tailwind CSS (Play CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,379 +18,312 @@
       theme: {
         extend: {
           colors: {
-            brand: { 50:'#fbf6e9',100:'#f6ead0',200:'#ecd29a',300:'#e0b765',400:'#d49f3c',DEFAULT:'#c2912e',600:'#a3781f',700:'#7e5d18' },
-            ink:   '#0f1320',
-            night: '#171c2e',
-            panel: '#1e2438',
+            bone:  '#f3efe6',
+            paper: '#fbf8f1',
+            cream: '#e9e2d3',
+            ink:   '#181410',
+            ink2:  '#4a4338',
+            ember: { DEFAULT:'#c9531f', 600:'#a8431a', 300:'#e07a48', 100:'#f3d9c9' },
+            night: '#15110c',
+            panel: '#1f1810',
           },
           fontFamily: {
-            display: ['"Playfair Display"','serif'],
-            sans:    ['Poppins','system-ui','sans-serif'],
+            display: ['Fraunces','Georgia','serif'],
+            sans:    ['"Hanken Grotesk"','system-ui','sans-serif'],
+            mono:    ['"Hanken Grotesk"','ui-monospace','monospace'],
           },
         },
       },
     };
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="bg-stone-50 text-slate-800 dark:bg-ink dark:text-slate-200 font-sans antialiased selection:bg-brand selection:text-white transition-colors duration-300">
+<body class="bg-bone text-ink dark:bg-night dark:text-bone font-sans antialiased selection:bg-ember selection:text-paper">
 
-  <!-- ============ TOP BAR ============ -->
-  <div class="hidden md:block bg-night text-white text-xs">
-    <div class="mx-auto max-w-7xl px-6 py-2 flex items-center justify-between text-slate-300">
-      <span class="flex items-center gap-2">
-        <svg class="h-4 w-4 text-brand-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg>
-        No.9, K.C. Puttanna Road, Doddamavalli, Bengaluru — 560004
-      </span>
-      <span class="flex items-center gap-6">
-        <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Open Mon–Sat · 9:30am–9:30pm</span>
-        <a href="tel:+919380440967" class="text-brand-300 hover:text-white transition">+91 93804 40967</a>
-        <a href="tel:+918667862460" class="text-brand-300 hover:text-white transition">+91 86678 62460</a>
-      </span>
-    </div>
-  </div>
+  <!-- grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- ============ NAVBAR ============ -->
-  <header id="nav" class="sticky top-0 z-50 bg-stone-50/80 dark:bg-ink/80 backdrop-blur transition-all duration-300">
-    <nav class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+  <header id="nav" class="sticky top-0 z-50 transition-all duration-300">
+    <nav class="mx-auto max-w-[1280px] px-5 sm:px-8 py-4 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group">
-        <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-300 to-brand-600 text-white font-display font-bold text-lg shadow-lg shadow-brand/20">SK</span>
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-ink text-paper dark:bg-ember font-display font-semibold text-lg leading-none">श्री</span>
         <span class="leading-tight">
-          <span class="block font-display text-lg font-semibold text-slate-900 dark:text-white">Sri Krishna</span>
-          <span class="block text-[11px] tracking-[0.25em] text-brand-600 dark:text-brand-300 uppercase">Decoration</span>
+          <span class="block font-display text-[1.15rem] font-semibold tracking-tight text-ink dark:text-bone">Sri Krishna</span>
+          <span class="block text-[10px] tracking-[0.4em] text-ember uppercase">Decoration</span>
         </span>
       </a>
 
-      <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#home" class="hover:text-brand transition">Home</a>
-        <a href="#services" class="hover:text-brand transition">Services</a>
-        <a href="#why" class="hover:text-brand transition">Why Us</a>
-        <a href="#gallery" class="hover:text-brand transition">Gallery</a>
-        <a href="#about" class="hover:text-brand transition">About</a>
-        <a href="#contact" class="hover:text-brand transition">Contact</a>
+      <div class="hidden lg:flex items-center gap-9 text-[0.92rem] font-medium text-ink2 dark:text-bone/70">
+        <a href="#services" class="link-underline">Services</a>
+        <a href="#why" class="link-underline">Why Us</a>
+        <a href="#gallery" class="link-underline">Work</a>
+        <a href="#about" class="link-underline">About</a>
+        <a href="#contact" class="link-underline">Contact</a>
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- THEME TOGGLE -->
         <button id="themeBtn" aria-label="Toggle dark mode"
-          class="grid h-10 w-10 place-items-center rounded-lg border border-slate-300 dark:border-white/15 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5 transition">
-          <svg class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2 12h2m16 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg>
-          <svg class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          class="grid h-10 w-10 place-items-center rounded-full border border-ink/15 dark:border-bone/20 text-ink dark:text-bone hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">
+          <svg class="h-[18px] w-[18px] block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2 12h2m16 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg>
+          <svg class="h-[18px] w-[18px] hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
         </button>
-
         <a href="https://wa.me/919380440967" target="_blank" rel="noopener"
-           class="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-300 to-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition shadow-lg shadow-brand/20">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg>
-          WhatsApp
+           class="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-paper dark:bg-ember dark:text-paper px-5 py-2.5 text-sm font-semibold hover:bg-ember dark:hover:bg-ember-600 transition">
+          Enquire
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
-        <button id="menuBtn" class="lg:hidden grid h-10 w-10 place-items-center rounded-lg border border-slate-300 dark:border-white/15 text-slate-700 dark:text-white">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <button id="menuBtn" class="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-ink/15 dark:border-bone/20 text-ink dark:text-bone">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
         </button>
       </div>
     </nav>
 
-    <!-- mobile menu -->
-    <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-200 dark:border-white/5 bg-stone-50 dark:bg-night">
-      <div class="px-6 py-4 flex flex-col gap-3 text-sm font-medium">
-        <a href="#home" class="py-1 hover:text-brand">Home</a>
-        <a href="#services" class="py-1 hover:text-brand">Services</a>
-        <a href="#why" class="py-1 hover:text-brand">Why Us</a>
-        <a href="#gallery" class="py-1 hover:text-brand">Gallery</a>
-        <a href="#about" class="py-1 hover:text-brand">About</a>
-        <a href="#contact" class="py-1 hover:text-brand">Contact</a>
-        <a href="tel:+919380440967" class="mt-2 rounded-full bg-brand text-white text-center py-2.5 font-semibold">Call +91 93804 40967</a>
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-ink/10 dark:border-bone/10 bg-bone dark:bg-night">
+      <div class="px-6 py-4 flex flex-col gap-3 text-base font-medium">
+        <a href="#services" class="py-1">Services</a>
+        <a href="#why" class="py-1">Why Us</a>
+        <a href="#gallery" class="py-1">Work</a>
+        <a href="#about" class="py-1">About</a>
+        <a href="#contact" class="py-1">Contact</a>
+        <a href="tel:+919380440967" class="mt-2 rounded-full bg-ink text-paper dark:bg-ember text-center py-2.5 font-semibold">Call +91 93804 40967</a>
       </div>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
   <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-brand/10 blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+    <!-- atmosphere -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-40 -right-32 h-[34rem] w-[34rem] rounded-full bg-ember/15 blur-[110px]"></div>
+      <div class="absolute top-40 -left-40 h-[30rem] w-[30rem] rounded-full bg-amber-300/20 dark:bg-ember/10 blur-[120px]"></div>
     </div>
 
-    <div class="mx-auto max-w-7xl px-6 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-2 gap-12 items-center">
-      <div data-reveal>
-        <span class="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-1.5 text-xs font-medium text-brand-700 dark:text-brand-300">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>
-          Authorised Garware · 3M · LX Hausys · Avery Dennison Dealer
-        </span>
-
-        <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] text-slate-900 dark:text-white">
-          Car &amp; Glass Films, Wallpapers &amp;
-          <span class="bg-gradient-to-r from-brand-600 via-brand-400 to-brand-600 bg-clip-text text-transparent"> Interior Decor</span>
-        </h1>
-
-        <p class="mt-6 max-w-xl text-base sm:text-lg text-slate-600 dark:text-slate-300/90 leading-relaxed">
-          Bengaluru's trusted decoration studio for sun-control window films, paint protection,
-          frosted &amp; privacy films, designer wallpapers and complete interior decor — crafted with genuine premium brands.
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-12 pb-10 lg:pt-16 lg:pb-16 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+      <!-- copy -->
+      <div class="lg:col-span-6 xl:col-span-6">
+        <p class="hero-rise [animation-delay:80ms] inline-flex items-center gap-3 text-[0.72rem] font-semibold tracking-[0.35em] uppercase text-ember">
+          <span class="h-px w-8 bg-ember"></span> Bengaluru · Doddamavalli
         </p>
 
-        <div class="mt-9 flex flex-wrap items-center gap-4">
+        <h1 class="hero-rise [animation-delay:160ms] mt-6 font-display font-semibold tracking-[-0.02em] leading-[0.95] text-ink dark:text-bone text-[2.7rem] sm:text-[3.6rem] xl:text-[4.4rem]">
+          Cooler cars,<br/>
+          calmer glass &amp;<br/>
+          <span class="italic font-light text-ember">richer</span> interiors.
+        </h1>
+
+        <p class="hero-rise [animation-delay:260ms] mt-7 max-w-md text-[1.02rem] leading-relaxed text-ink2 dark:text-bone/70">
+          Sri Krishna Decoration crafts sun-control window films, paint protection, frosted &amp; privacy
+          films, designer wallpapers and complete interior decor — with genuine premium brands and a
+          finish you'll actually notice.
+        </p>
+
+        <div class="hero-rise [animation-delay:360ms] mt-9 flex flex-wrap items-center gap-3">
           <a href="https://wa.me/919380440967?text=Hi%20Sri%20Krishna%20Decoration%2C%20I%27d%20like%20a%20free%20quote" target="_blank" rel="noopener"
-             class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-300 to-brand-600 px-7 py-3.5 font-semibold text-white hover:brightness-110 transition shadow-lg shadow-brand/25">
-            Get a Free Quote
-            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+             class="group inline-flex items-center gap-2.5 rounded-full bg-ember text-paper px-7 py-4 font-semibold hover:bg-ember-600 transition">
+            Get a free quote
+            <span class="grid h-5 w-5 place-items-center rounded-full bg-paper/20 group-hover:translate-x-0.5 transition"><svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
           </a>
-          <a href="tel:+919380440967"
-             class="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-white/15 px-7 py-3.5 font-semibold text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition">
-            <svg class="h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg>
-            Call Now
+          <a href="tel:+919380440967" class="inline-flex items-center gap-2.5 rounded-full border border-ink/20 dark:border-bone/25 px-7 py-4 font-semibold text-ink dark:text-bone hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg>
+            93804 40967
           </a>
         </div>
 
-        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <div class="flex items-center gap-2">
-            <div class="flex text-brand">★★★★★</div>
-            <span class="text-sm text-slate-600 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">5.0</strong> · 20+ happy customers</span>
-          </div>
-          <div class="h-8 w-px bg-slate-300 dark:bg-white/10 hidden sm:block"></div>
-          <div class="text-sm text-slate-500 dark:text-slate-400">Genuine films · Expert installation · Fair pricing</div>
+        <!-- mini stats -->
+        <div class="hero-rise [animation-delay:460ms] mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-ink/10 dark:border-bone/15 pt-7">
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">5.0<span class="text-ember">★</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">20+ reviews</p></div>
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">99%</p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">UV blocked</p></div>
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">10<span class="text-ember">+</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">years</p></div>
         </div>
       </div>
 
-      <!-- hero image -->
-      <div data-reveal class="relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g2.jpg" alt="Garware sun-control film on a car window by Sri Krishna Decoration"
-               class="h-[440px] w-full object-cover" loading="eager" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent"></div>
-        </div>
-        <div class="absolute -bottom-6 -left-4 sm:left-6 rounded-2xl bg-white dark:bg-panel border border-slate-200 dark:border-white/10 p-5 shadow-xl">
-          <p class="text-3xl font-display font-semibold text-brand">99%</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">UV rays blocked</p>
-        </div>
-        <div class="absolute -top-6 right-4 rounded-2xl bg-white dark:bg-panel border border-slate-200 dark:border-white/10 p-5 shadow-xl">
-          <p class="text-3xl font-display font-semibold text-emerald-600 dark:text-emerald-400">−15°C</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Cooler interiors</p>
+      <!-- shop imagery -->
+      <div class="lg:col-span-6 xl:col-span-6 relative">
+        <div class="hero-rise [animation-delay:300ms] relative">
+          <!-- main: storefront -->
+          <figure class="relative overflow-hidden rounded-[2rem] ring-1 ring-ink/10 dark:ring-bone/10 shadow-2xl shadow-ink/20">
+            <img src="images/g1.jpg" alt="Sri Krishna Decoration storefront in Bengaluru, decorated with marigold garlands"
+                 class="h-[28rem] sm:h-[34rem] w-full object-cover" loading="eager" />
+            <figcaption class="absolute left-5 bottom-5 rounded-full bg-paper/90 dark:bg-night/85 backdrop-blur px-4 py-2 text-[0.78rem] font-semibold text-ink dark:text-bone ring-1 ring-ink/10 dark:ring-bone/15">
+              📍 Our store · K.C. Puttanna Road
+            </figcaption>
+          </figure>
+
+          <!-- overlapping car detail -->
+          <figure class="absolute -bottom-8 -left-6 hidden sm:block w-40 h-52 overflow-hidden rounded-2xl ring-4 ring-bone dark:ring-night shadow-xl rotate-[-5deg]">
+            <img src="images/g2.jpg" alt="Sun-control film on a car window" class="h-full w-full object-cover" loading="lazy" />
+          </figure>
+
+          <!-- rating chip -->
+          <div class="absolute -top-5 -right-3 sm:-right-5 rounded-2xl bg-ink text-paper dark:bg-ember px-5 py-4 shadow-xl rotate-3">
+            <div class="flex text-amber-300 text-sm leading-none">★★★★★</div>
+            <p class="mt-1.5 text-[0.7rem] tracking-wide text-paper/80">Rated by happy<br/>customers</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ============ BRAND STRIP ============ -->
-  <section class="border-y border-slate-200 dark:border-white/5 bg-white dark:bg-night/40">
-    <div class="mx-auto max-w-7xl px-6 py-8 flex flex-col lg:flex-row items-center justify-between gap-6">
-      <p class="text-sm uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Trusted brands we use</p>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-slate-700 dark:text-slate-300 font-display text-xl sm:text-2xl font-semibold">
-        <span>3M</span><span class="h-6 w-px bg-slate-300 dark:bg-white/10"></span>
-        <span>Garware</span><span class="h-6 w-px bg-slate-300 dark:bg-white/10"></span>
-        <span>LX&nbsp;Hausys</span><span class="h-6 w-px bg-slate-300 dark:bg-white/10"></span>
-        <span>Avery&nbsp;Dennison</span><span class="h-6 w-px bg-slate-300 dark:bg-white/10"></span>
-        <span>McCal</span><span class="h-6 w-px bg-slate-300 dark:bg-white/10"></span>
-        <span>Alps</span>
+    <!-- brand marquee -->
+    <div class="border-y border-ink/10 dark:border-bone/10 bg-paper/60 dark:bg-panel/50 py-4 overflow-hidden">
+      <div class="marquee flex items-center gap-12 whitespace-nowrap text-ink2 dark:text-bone/60 font-display text-xl sm:text-2xl">
+        <span class="mq-group flex items-center gap-12 pr-12">
+          <span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span>
+        </span>
+        <span class="mq-group flex items-center gap-12 pr-12" aria-hidden="true">
+          <span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span>
+        </span>
       </div>
     </div>
   </section>
 
   <!-- ============ SERVICES ============ -->
   <section id="services" class="py-24">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl" data-reveal>
-        <p class="text-brand-600 dark:text-brand-300 text-sm font-semibold tracking-[0.2em] uppercase">What we do</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">Complete films &amp; decor solutions</h2>
-        <p class="mt-4 text-slate-500 dark:text-slate-400">From cars and glass facades to walls and interiors — one trusted studio for all your decoration needs.</p>
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
+        <div>
+          <p class="eyebrow">01 — What we do</p>
+          <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em] max-w-xl">From cars &amp; glass to walls &amp; interiors.</h2>
+        </div>
+        <p class="md:max-w-xs text-ink2 dark:text-bone/65">One trusted studio for every film and decor need — done with genuine products and real craft.</p>
       </div>
 
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 1 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 3v2m0 14v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M3 12h2m14 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Car &amp; Glass Sun-Control Films</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Garware &amp; 3M heat-rejection films that block UV/IR, cut glare and keep interiors up to 15°C cooler.</p>
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 dark:bg-bone/10 rounded-[1.75rem] overflow-hidden ring-1 ring-ink/10 dark:ring-bone/10">
+        <!-- card -->
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">01</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2 12h2m16 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg></div>
+          <h3 class="svc-h">Sun-Control Films</h3>
+          <p class="svc-p">Garware &amp; 3M heat-rejection films for cars &amp; glass — block UV/IR, cut glare, stay up to 15°C cooler.</p>
         </article>
-        <!-- 2 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.2 7.5 8 9 4.8-1.5 8-4.5 8-9V6l-8-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Paint Protection Film (PPF)</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Self-healing PPF that shields your car's paint from scratches, stone chips, UV &amp; oxidation.</p>
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">02</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.2 7.5 8 9 4.8-1.5 8-4.5 8-9V6l-8-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg></div>
+          <h3 class="svc-h">Paint Protection (PPF)</h3>
+          <p class="svc-p">Self-healing film that guards your car's paint against scratches, stone chips, UV &amp; oxidation.</p>
         </article>
-        <!-- 3 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M3 9h18M9 4v16"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Frosted &amp; Privacy Films</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Frosted, etched &amp; one-way films for offices, cabins, homes &amp; shopfronts — privacy with daylight.</p>
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">03</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M3 9h18M9 4v16"/></svg></div>
+          <h3 class="svc-h">Frosted &amp; Privacy Films</h3>
+          <p class="svc-p">Frosted, etched &amp; one-way films for offices, cabins, homes &amp; shopfronts — privacy with daylight.</p>
         </article>
-        <!-- 4 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14M4 19h16M4 19l5-6 3 3 4-5 4 8"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Designer Wallpapers</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Premium imported &amp; customised wallpapers for living rooms, bedrooms, offices &amp; feature walls.</p>
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">04</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14M4 19h16M4 19l5-6 3 3 4-5 4 8"/></svg></div>
+          <h3 class="svc-h">Designer Wallpapers</h3>
+          <p class="svc-p">Premium imported &amp; customised wallpapers for living rooms, bedrooms, offices &amp; feature walls.</p>
         </article>
-        <!-- 5 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Interior Decor</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Complete interior styling — vinyl wraps, glass partitions, decorative panels &amp; finishing touches.</p>
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">05</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+          <h3 class="svc-h">Interior Decor</h3>
+          <p class="svc-p">Complete styling — vinyl wraps, glass partitions, decorative panels &amp; finishing touches.</p>
         </article>
-        <!-- 6 -->
-        <article data-reveal class="group rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] p-7 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition">
-          <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand group-hover:scale-110 transition">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z"/></svg>
-          </div>
-          <h3 class="mt-5 font-semibold text-slate-900 dark:text-white text-lg">Safety &amp; Glazing Films</h3>
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Shatter-resistant safety glazing films that hold glass together and add a layer of security.</p>
+        <article data-reveal class="svc bg-paper dark:bg-panel">
+          <span class="svc-num">06</span>
+          <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z"/></svg></div>
+          <h3 class="svc-h">Safety &amp; Glazing Films</h3>
+          <p class="svc-p">Shatter-resistant glazing films that hold glass together and add a real layer of security.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ WHY US ============ -->
-  <section id="why" class="py-24 bg-white dark:bg-night/40 border-y border-slate-200 dark:border-white/5">
-    <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-14 items-center">
-      <div data-reveal class="relative">
-        <img src="images/g5.jpg" alt="Frosted glass partition and wallpaper interior work"
-             class="rounded-3xl object-cover h-[460px] w-full ring-1 ring-black/5 dark:ring-white/10" loading="lazy" />
-        <div class="absolute -bottom-6 left-6 right-6 sm:right-auto rounded-2xl bg-white dark:bg-panel border border-slate-200 dark:border-white/10 px-6 py-4 flex items-center gap-4 shadow-xl">
-          <span class="font-display text-4xl font-semibold text-brand">10+</span>
-          <span class="text-sm text-slate-600 dark:text-slate-300 leading-tight">Years of trusted<br/>workmanship</span>
+  <!-- ============ WHY / FEATURE ============ -->
+  <section id="why" class="py-24 bg-paper dark:bg-panel/40 border-y border-ink/10 dark:border-bone/10">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <div data-reveal class="relative order-2 lg:order-1">
+        <figure class="overflow-hidden rounded-[2rem] ring-1 ring-ink/10 dark:ring-bone/10">
+          <img src="images/g5.jpg" alt="Frosted glass partitions and wallpaper interior work" class="h-[30rem] w-full object-cover" loading="lazy" />
+        </figure>
+        <div class="absolute -bottom-7 right-6 lg:-right-7 rounded-2xl bg-ink text-paper dark:bg-ember px-6 py-5 shadow-xl">
+          <p class="font-display text-4xl font-semibold leading-none">10+</p>
+          <p class="mt-2 text-xs text-paper/75 leading-tight">years of trusted<br/>workmanship</p>
         </div>
       </div>
 
-      <div data-reveal>
-        <p class="text-brand-600 dark:text-brand-300 text-sm font-semibold tracking-[0.2em] uppercase">Why Sri Krishna</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">Quality you can see, comfort you can feel</h2>
-        <p class="mt-4 text-slate-500 dark:text-slate-400">We don't just apply film — we engineer comfort and style. Genuine products, flawless finish, and honest advice every time.</p>
+      <div data-reveal class="order-1 lg:order-2">
+        <p class="eyebrow">02 — Why us</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Quality you can see, comfort you can feel.</h2>
+        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-lg">We don't just apply film — we engineer comfort and style. Genuine products, a flawless finish, and honest advice on every job.</p>
 
-        <div class="mt-8 grid sm:grid-cols-2 gap-5">
-          <div class="flex gap-4">
-            <span class="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg></span>
-            <div><h4 class="font-semibold text-slate-900 dark:text-white">100% Genuine Products</h4><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Authentic branded films with warranty.</p></div>
-          </div>
-          <div class="flex gap-4">
-            <span class="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg></span>
-            <div><h4 class="font-semibold text-slate-900 dark:text-white">Flawless Finish</h4><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Bubble-free, precision-cut installation.</p></div>
-          </div>
-          <div class="flex gap-4">
-            <span class="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg></span>
-            <div><h4 class="font-semibold text-slate-900 dark:text-white">Transparent Pricing</h4><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Clear quotes, no hidden costs.</p></div>
-          </div>
-          <div class="flex gap-4">
-            <span class="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg></span>
-            <div><h4 class="font-semibold text-slate-900 dark:text-white">After-Sales Support</h4><p class="text-sm text-slate-500 dark:text-slate-400 mt-1">We stand behind every job.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STATS ============ -->
-  <section class="py-16">
-    <div class="mx-auto max-w-7xl px-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div data-reveal class="rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] py-8 shadow-sm">
-        <p class="font-display text-4xl font-semibold text-brand" data-count="20" data-suffix="+">0</p>
-        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Happy Customers</p>
-      </div>
-      <div data-reveal class="rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] py-8 shadow-sm">
-        <p class="font-display text-4xl font-semibold text-brand" data-count="5" data-suffix="★">0</p>
-        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Average Rating</p>
-      </div>
-      <div data-reveal class="rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] py-8 shadow-sm">
-        <p class="font-display text-4xl font-semibold text-brand" data-count="99" data-suffix="%">0</p>
-        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">UV Protection</p>
-      </div>
-      <div data-reveal class="rounded-2xl border border-slate-200 dark:border-white/8 bg-white dark:bg-white/[.02] py-8 shadow-sm">
-        <p class="font-display text-4xl font-semibold text-brand" data-count="6" data-suffix="+">0</p>
-        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Premium Brands</p>
+        <dl class="mt-10 divide-y divide-ink/10 dark:divide-bone/10 border-y border-ink/10 dark:border-bone/10">
+          <div class="feat"><dt>Genuine branded products</dt><dd>Authentic Garware, 3M & LX Hausys with warranty.</dd></div>
+          <div class="feat"><dt>Flawless, bubble-free finish</dt><dd>Dust-controlled, precision-cut installation.</dd></div>
+          <div class="feat"><dt>Transparent, fair pricing</dt><dd>Clear quotes — no hidden costs, ever.</dd></div>
+          <div class="feat"><dt>After-sales support</dt><dd>We stand behind every single job.</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
   <!-- ============ GALLERY ============ -->
-  <section id="gallery" class="py-24 bg-white dark:bg-night/40 border-y border-slate-200 dark:border-white/5">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl" data-reveal>
-        <p class="text-brand-600 dark:text-brand-300 text-sm font-semibold tracking-[0.2em] uppercase">Our work</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">A glimpse of our craftsmanship</h2>
+  <section id="gallery" class="py-24">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
+      <div data-reveal>
+        <p class="eyebrow">03 — Selected work</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em] max-w-xl">A glimpse of the craft.</h2>
       </div>
 
-      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl row-span-2 ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g2.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Car sun-control film" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Car Sun-Control Film</span></figcaption>
-        </figure>
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g3.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Garware film products" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Genuine Film Range</span></figcaption>
-        </figure>
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g7.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Paint protection film application" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Paint Protection (PPF)</span></figcaption>
-        </figure>
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl row-span-2 ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g5.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Frosted glass and wallpaper interior" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Frosted Glass &amp; Wallpaper</span></figcaption>
-        </figure>
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g8.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Window film rolls" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Window Film Rolls</span></figcaption>
-        </figure>
-        <figure data-reveal class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <img src="images/g1.jpg" class="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt="Sri Krishna Decoration storefront" loading="lazy" />
-          <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 p-5 opacity-0 group-hover:opacity-100 transition"><span class="text-white font-medium">Our Store</span></figcaption>
-        </figure>
+      <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[220px]">
+        <figure data-reveal class="tile row-span-2"><img src="images/g2.jpg" alt="Car sun-control film"/><figcaption><span class="t-k">Automotive</span>Sun-Control Film</figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g3.jpg" alt="Garware film products"/><figcaption><span class="t-k">Products</span>Genuine Film Range</figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g7.jpg" alt="Paint protection film application"/><figcaption><span class="t-k">Detailing</span>Paint Protection</figcaption></figure>
+        <figure data-reveal class="tile row-span-2"><img src="images/g5.jpg" alt="Frosted glass and wallpaper interior"/><figcaption><span class="t-k">Interiors</span>Frosted Glass &amp; Wallpaper</figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g8.jpg" alt="Window film rolls"/><figcaption><span class="t-k">In stock</span>Window Film Rolls</figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g4.jpg" alt="Sri Krishna Decoration storefront"/><figcaption><span class="t-k">Visit us</span>Our Store</figcaption></figure>
       </div>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" class="py-24">
-    <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-14 items-center">
+  <section id="about" class="py-24 bg-paper dark:bg-panel/40 border-y border-ink/10 dark:border-bone/10">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
       <div data-reveal>
-        <p class="text-brand-600 dark:text-brand-300 text-sm font-semibold tracking-[0.2em] uppercase">About us</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">Your neighbourhood decoration experts in Bengaluru</h2>
-        <p class="mt-4 text-slate-500 dark:text-slate-400 leading-relaxed">
-          Located at Doddamavalli, <strong class="text-slate-700 dark:text-slate-200">Sri Krishna Decoration</strong> has earned a 5-star
-          reputation for car &amp; glass films, wallpapers and interior decor. As an authorised dealer of Garware, 3M, LX Hausys,
-          Avery Dennison, McCal and Alps, we bring genuine products and skilled craftsmanship to every project — big or small.
+        <p class="eyebrow">04 — About</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Your neighbourhood decoration experts.</h2>
+        <p class="mt-6 text-ink2 dark:text-bone/70 leading-relaxed">
+          Tucked into Doddamavalli, <strong class="text-ink dark:text-bone font-semibold">Sri Krishna Decoration</strong> has earned a
+          5-star name for car &amp; glass films, wallpapers and interior decor. As an authorised dealer of Garware, 3M, LX Hausys,
+          Avery Dennison, McCal and Alps, we bring genuine products and skilled hands to every project — big or small.
         </p>
-        <p class="mt-4 text-slate-500 dark:text-slate-400 leading-relaxed">
+        <p class="mt-4 text-ink2 dark:text-bone/70 leading-relaxed">
           Whether it's keeping your car cool, adding privacy to your office, or transforming a room with designer wallpaper,
           we treat your space like our own.
         </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-300 to-brand-600 px-7 py-3.5 font-semibold text-white hover:brightness-110 transition shadow-lg shadow-brand/25">Visit Our Store</a>
-          <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-white/15 px-7 py-3.5 font-semibold text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition">Chat on WhatsApp</a>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-ember text-paper px-7 py-4 font-semibold hover:bg-ember-600 transition">Visit our store</a>
+          <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 dark:border-bone/25 px-7 py-4 font-semibold hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">Chat on WhatsApp</a>
         </div>
       </div>
       <div data-reveal>
-        <img src="images/g4.jpg" alt="Sri Krishna Decoration storefront and signboard"
-             class="rounded-3xl object-cover w-full ring-1 ring-black/5 dark:ring-white/10 shadow-xl" loading="lazy" />
+        <figure class="overflow-hidden rounded-[2rem] ring-1 ring-ink/10 dark:ring-bone/10 shadow-xl">
+          <img src="images/g4.jpg" alt="Sri Krishna Decoration signboard and storefront" class="w-full object-cover" loading="lazy" />
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA BANNER ============ -->
-  <section class="pb-20">
-    <div class="mx-auto max-w-7xl px-6">
-      <div data-reveal class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-400 to-brand-600 px-8 py-12 sm:px-14 sm:py-16 text-white">
-        <div class="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/20 blur-2xl"></div>
-        <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+  <!-- ============ CTA ============ -->
+  <section class="py-20">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
+      <div data-reveal class="relative overflow-hidden rounded-[2rem] bg-ink dark:bg-ember text-paper px-8 py-14 sm:px-16 sm:py-20">
+        <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-ember/40 dark:bg-paper/10 blur-3xl"></div>
+        <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div>
-            <h2 class="font-display text-3xl sm:text-4xl font-semibold">Ready to transform your car, glass or walls?</h2>
-            <p class="mt-3 text-white/85 max-w-xl">Book a free consultation today and feel the difference premium films &amp; decor make.</p>
+            <p class="text-[0.72rem] font-semibold tracking-[0.35em] uppercase text-ember dark:text-paper/80">Let's begin</p>
+            <h2 class="mt-4 font-display text-[2rem] sm:text-[2.8rem] font-semibold leading-[1.03] max-w-xl">Ready to transform your car, glass or walls?</h2>
           </div>
-          <div class="flex flex-wrap gap-4">
-            <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-night px-7 py-3.5 font-semibold text-white hover:bg-ink transition">WhatsApp Us</a>
-            <a href="tel:+919380440967" class="inline-flex items-center gap-2 rounded-full border-2 border-white px-7 py-3.5 font-semibold text-white hover:bg-white hover:text-brand-700 transition">Call +91 93804 40967</a>
+          <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+            <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="rounded-full bg-paper text-ink px-7 py-4 font-semibold text-center hover:bg-ember hover:text-paper transition">WhatsApp us</a>
+            <a href="tel:+919380440967" class="rounded-full border border-paper/40 px-7 py-4 font-semibold text-center hover:bg-paper hover:text-ink transition">Call 93804 40967</a>
           </div>
         </div>
       </div>
@@ -399,51 +331,41 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="py-24 bg-white dark:bg-night/40 border-t border-slate-200 dark:border-white/5">
-    <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12">
+  <section id="contact" class="py-24 bg-paper dark:bg-panel/40 border-t border-ink/10 dark:border-bone/10">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14">
       <div data-reveal>
-        <p class="text-brand-600 dark:text-brand-300 text-sm font-semibold tracking-[0.2em] uppercase">Get in touch</p>
-        <h2 class="mt-3 font-display text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white">Visit us or send a message</h2>
-        <p class="mt-4 text-slate-500 dark:text-slate-400">We're happy to help you choose the perfect film, wallpaper or decor. Reach out and we'll respond quickly.</p>
+        <p class="eyebrow">05 — Get in touch</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Visit us or send a message.</h2>
+        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-md">Happy to help you choose the perfect film, wallpaper or decor. Reach out and we'll respond quickly.</p>
 
-        <div class="mt-8 space-y-5">
+        <div class="mt-9 space-y-6">
           <a href="https://maps.google.com/?q=Sri+Krishna+Decoration+K.C.Puttanna+Rd+Doddamavalli+Bengaluru+560004" target="_blank" rel="noopener" class="flex gap-4 group">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
-            <span><span class="block text-slate-900 dark:text-white font-medium group-hover:text-brand transition">Our Address</span><span class="text-sm text-slate-500 dark:text-slate-400">No. 9, Ground Floor, K.C. Puttanna Road, Near Bright Future School, Doddamavalli, Bengaluru, Karnataka — 560004</span></span>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
+            <span><span class="block font-semibold text-ink dark:text-bone group-hover:text-ember transition">Our address</span><span class="text-sm text-ink2 dark:text-bone/60">No. 9, Ground Floor, K.C. Puttanna Road, Near Bright Future School, Doddamavalli, Bengaluru — 560004</span></span>
           </a>
           <div class="flex gap-4">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg></span>
-            <span><span class="block text-slate-900 dark:text-white font-medium">Phone &amp; WhatsApp</span><span class="text-sm text-slate-500 dark:text-slate-400"><a href="tel:+919380440967" class="hover:text-brand">+91 93804 40967</a> · <a href="tel:+918667862460" class="hover:text-brand">+91 86678 62460</a></span></span>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg></span>
+            <span><span class="block font-semibold text-ink dark:text-bone">Phone &amp; WhatsApp</span><span class="text-sm text-ink2 dark:text-bone/60"><a href="tel:+919380440967" class="hover:text-ember">+91 93804 40967</a> · <a href="tel:+918667862460" class="hover:text-ember">+91 86678 62460</a></span></span>
           </div>
           <div class="flex gap-4">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg></span>
-            <span><span class="block text-slate-900 dark:text-white font-medium">Working Hours</span><span class="text-sm text-slate-500 dark:text-slate-400">Mon–Sat: 9:30 AM – 9:30 PM<br/>Sunday: 9:30 AM – 2:30 PM</span></span>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg></span>
+            <span><span class="block font-semibold text-ink dark:text-bone">Working hours</span><span class="text-sm text-ink2 dark:text-bone/60">Mon–Sat: 9:30 AM – 9:30 PM · Sun: 9:30 AM – 2:30 PM</span></span>
           </div>
         </div>
 
-        <div class="mt-8 overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
-          <iframe src="https://www.google.com/maps?q=Doddamavalli%20Mavalli%20Bengaluru%20560004&output=embed"
-            class="w-full h-64" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="mt-9 overflow-hidden rounded-[1.5rem] ring-1 ring-ink/10 dark:ring-bone/10">
+          <iframe src="https://www.google.com/maps?q=Doddamavalli%20Mavalli%20Bengaluru%20560004&output=embed" class="w-full h-64" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
       <div data-reveal>
-        <form id="contactForm" class="rounded-3xl border border-slate-200 dark:border-white/8 bg-stone-50 dark:bg-white/[.02] p-8 space-y-5 shadow-sm">
-          <h3 class="font-display text-2xl font-semibold text-slate-900 dark:text-white">Request a free quote</h3>
-          <div>
-            <label class="block text-sm text-slate-500 dark:text-slate-400 mb-1.5">Full Name</label>
-            <input type="text" name="name" required placeholder="Your name"
-              class="w-full rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-ink/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand transition" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-500 dark:text-slate-400 mb-1.5">Phone Number</label>
-            <input type="tel" name="phone" required placeholder="+91 ..."
-              class="w-full rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-ink/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand transition" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-500 dark:text-slate-400 mb-1.5">Service Needed</label>
-            <select name="service" class="w-full rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-ink/60 px-4 py-3 text-slate-900 dark:text-white focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand transition">
-              <option>Car &amp; Glass Sun-Control Film</option>
+        <form id="contactForm" class="rounded-[2rem] border border-ink/10 dark:border-bone/10 bg-bone dark:bg-night p-8 sm:p-10 space-y-5">
+          <h3 class="font-display text-2xl font-semibold">Request a free quote</h3>
+          <div><label class="lbl">Full name</label><input type="text" name="name" required placeholder="Your name" class="inp" /></div>
+          <div><label class="lbl">Phone number</label><input type="tel" name="phone" required placeholder="+91 …" class="inp" /></div>
+          <div><label class="lbl">Service needed</label>
+            <select name="service" class="inp">
+              <option>Sun-Control Film (car / glass)</option>
               <option>Paint Protection (PPF)</option>
               <option>Frosted / Privacy Film</option>
               <option>Wallpaper</option>
@@ -451,62 +373,52 @@
               <option>Other</option>
             </select>
           </div>
-          <div>
-            <label class="block text-sm text-slate-500 dark:text-slate-400 mb-1.5">Message</label>
-            <textarea name="message" rows="4" placeholder="Tell us about your car / home / office..."
-              class="w-full rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-ink/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand transition"></textarea>
-          </div>
-          <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-brand-300 to-brand-600 py-3.5 font-semibold text-white hover:brightness-110 transition shadow-lg shadow-brand/25">
-            Send via WhatsApp
-          </button>
-          <p class="text-center text-xs text-slate-400">We'll never share your details. Powered by WhatsApp.</p>
+          <div><label class="lbl">Message</label><textarea name="message" rows="4" placeholder="Tell us about your car / home / office…" class="inp"></textarea></div>
+          <button type="submit" class="w-full rounded-full bg-ember text-paper py-4 font-semibold hover:bg-ember-600 transition">Send via WhatsApp</button>
+          <p class="text-center text-xs text-ink2/70 dark:text-bone/45">We'll never share your details. Powered by WhatsApp.</p>
         </form>
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="border-t border-slate-200 dark:border-white/5 bg-stone-100 dark:bg-ink">
-    <div class="mx-auto max-w-7xl px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+  <footer class="bg-ink text-bone">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div class="sm:col-span-2 lg:col-span-1">
         <div class="flex items-center gap-3">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-300 to-brand-600 text-white font-display font-bold text-lg">SK</span>
-          <span class="font-display text-lg font-semibold text-slate-900 dark:text-white">Sri Krishna<br class="hidden sm:block"/> Decoration</span>
+          <span class="grid h-11 w-11 place-items-center rounded-full bg-ember text-paper font-display font-semibold text-lg">श्री</span>
+          <span class="font-display text-lg font-semibold">Sri Krishna<br/>Decoration</span>
         </div>
-        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 max-w-xs">Car &amp; glass films, wallpapers and interior decor in Bengaluru. Authorised Garware, 3M, LX Hausys &amp; Avery Dennison dealer.</p>
+        <p class="mt-5 text-sm text-bone/55 max-w-xs">Car &amp; glass films, wallpapers and interior decor in Bengaluru. Authorised Garware, 3M, LX Hausys &amp; Avery Dennison dealer.</p>
       </div>
       <div>
-        <h4 class="font-semibold text-slate-900 dark:text-white">Quick Links</h4>
-        <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li><a href="#services" class="hover:text-brand transition">Services</a></li>
-          <li><a href="#why" class="hover:text-brand transition">Why Us</a></li>
-          <li><a href="#gallery" class="hover:text-brand transition">Gallery</a></li>
-          <li><a href="#about" class="hover:text-brand transition">About</a></li>
-          <li><a href="#contact" class="hover:text-brand transition">Contact</a></li>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Explore</h4>
+        <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
+          <li><a href="#services" class="hover:text-bone transition">Services</a></li>
+          <li><a href="#why" class="hover:text-bone transition">Why Us</a></li>
+          <li><a href="#gallery" class="hover:text-bone transition">Work</a></li>
+          <li><a href="#about" class="hover:text-bone transition">About</a></li>
+          <li><a href="#contact" class="hover:text-bone transition">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold text-slate-900 dark:text-white">Services</h4>
-        <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
-          <li>Sun-Control Films</li>
-          <li>Paint Protection (PPF)</li>
-          <li>Frosted &amp; Privacy Films</li>
-          <li>Wallpapers</li>
-          <li>Interior Decor</li>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Services</h4>
+        <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
+          <li>Sun-Control Films</li><li>Paint Protection (PPF)</li><li>Frosted &amp; Privacy Films</li><li>Wallpapers</li><li>Interior Decor</li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold text-slate-900 dark:text-white">Contact</h4>
-        <ul class="mt-4 space-y-2 text-sm text-slate-500 dark:text-slate-400">
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Contact</h4>
+        <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
           <li>No.9, K.C. Puttanna Rd,<br/>Doddamavalli, Bengaluru — 560004</li>
-          <li><a href="tel:+919380440967" class="hover:text-brand transition">+91 93804 40967</a></li>
-          <li><a href="tel:+918667862460" class="hover:text-brand transition">+91 86678 62460</a></li>
-          <li>Mon–Sat: 9:30 AM – 9:30 PM</li>
+          <li><a href="tel:+919380440967" class="hover:text-bone transition">+91 93804 40967</a></li>
+          <li><a href="tel:+918667862460" class="hover:text-bone transition">+91 86678 62460</a></li>
+          <li>Mon–Sat · 9:30 AM – 9:30 PM</li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-slate-200 dark:border-white/5">
-      <div class="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400 dark:text-slate-500">
+    <div class="border-t border-bone/10">
+      <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-bone/45">
         <span>© <span id="year"></span> Sri Krishna Decoration. All rights reserved.</span>
         <span>Garware · 3M · LX Hausys · Avery Dennison Authorised</span>
       </div>
@@ -515,7 +427,7 @@
 
   <!-- floating whatsapp -->
   <a href="https://wa.me/919380440967" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-     class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition animate-bounce-slow">
+     class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg shadow-emerald-900/30 hover:scale-110 transition animate-bounce-slow">
     <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg>
   </a>
 
