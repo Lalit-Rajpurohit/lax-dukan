@@ -16,9 +16,28 @@ themeBtn.addEventListener('click', () => {
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-mobileMenu.querySelectorAll('a').forEach((a) =>
-  a.addEventListener('click', () => mobileMenu.classList.add('hidden'))
-);
+
+// --- Smooth in-page scroll + close mobile menu on any nav link ---
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (!id || id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    mobileMenu.classList.add('hidden');                       // close the mobile menu
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' }); // smooth scroll (header offset via scroll-padding)
+    history.replaceState(null, '', id);
+  });
+});
+
+// close mobile menu when tapping outside it
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.classList.contains('hidden') &&
+      !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileMenu.classList.add('hidden');
+  }
+});
 
 // --- Navbar shadow on scroll ---
 const nav = document.getElementById('nav');
