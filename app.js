@@ -32,7 +32,7 @@ function applyLang(lang) {
   localStorage.setItem('lang', lang);
 }
 
-let curLang = localStorage.getItem('lang') === 'en' ? 'en' : 'kn';
+let curLang = localStorage.getItem('lang') === 'kn' ? 'kn' : 'en';
 applyLang(curLang);
 langBtn.addEventListener('click', () => {
   curLang = curLang === 'en' ? 'kn' : 'en';
