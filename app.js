@@ -12,6 +12,33 @@ themeBtn.addEventListener('click', () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
+// --- Language toggle (default Kannada, switch to English; remembers choice) ---
+const langBtn = document.getElementById('langBtn');
+const i18nEls = document.querySelectorAll('[data-i18n]');
+const i18nPh  = document.querySelectorAll('[data-en-ph]');
+// capture the in-HTML Kannada text as the 'kn' value
+i18nEls.forEach((el) => { el.dataset.kn = el.textContent; });
+i18nPh.forEach((el) => { el.dataset.knPh = el.placeholder; });
+
+function applyLang(lang) {
+  i18nEls.forEach((el) => {
+    el.textContent = lang === 'en' ? (el.dataset.en || el.dataset.kn) : el.dataset.kn;
+  });
+  i18nPh.forEach((el) => {
+    el.placeholder = lang === 'en' ? (el.dataset.enPh || el.dataset.knPh) : el.dataset.knPh;
+  });
+  document.documentElement.setAttribute('lang', lang);
+  if (langBtn) langBtn.textContent = lang === 'en' ? 'ಕನ್ನಡ' : 'EN';
+  localStorage.setItem('lang', lang);
+}
+
+let curLang = localStorage.getItem('lang') === 'en' ? 'en' : 'kn';
+applyLang(curLang);
+langBtn.addEventListener('click', () => {
+  curLang = curLang === 'en' ? 'kn' : 'en';
+  applyLang(curLang);
+});
+
 // --- Mobile menu toggle ---
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');

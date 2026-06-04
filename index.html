@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="kn" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,19 +20,12 @@
       theme: {
         extend: {
           colors: {
-            bone:  '#f3efe6',
-            paper: '#fbf8f1',
-            cream: '#e9e2d3',
-            ink:   '#181410',
-            ink2:  '#4a4338',
-            ember: { DEFAULT:'#c9531f', 600:'#a8431a', 300:'#e07a48', 100:'#f3d9c9' },
-            night: '#15110c',
-            panel: '#1f1810',
+            bone:'#f3efe6', paper:'#fbf8f1', cream:'#e9e2d3', ink:'#181410', ink2:'#4a4338',
+            ember:{DEFAULT:'#c9531f',600:'#a8431a',300:'#e07a48',100:'#f3d9c9'}, night:'#15110c', panel:'#1f1810',
           },
           fontFamily: {
-            display: ['Fraunces','Georgia','serif'],
-            sans:    ['"Hanken Grotesk"','system-ui','sans-serif'],
-            mono:    ['"Hanken Grotesk"','ui-monospace','monospace'],
+            display: ['Fraunces','"Noto Serif Kannada"','Georgia','serif'],
+            sans:    ['"Hanken Grotesk"','"Noto Sans Kannada"','system-ui','sans-serif'],
           },
         },
       },
@@ -41,15 +34,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Serif+Kannada:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="bg-bone text-ink dark:bg-night dark:text-bone font-sans antialiased selection:bg-ember selection:text-paper">
-
-  <!-- grain overlay -->
-  <div class="grain" aria-hidden="true"></div>
 
   <!-- ============ NAVBAR ============ -->
   <header id="nav" class="sticky top-0 z-50 transition-all duration-300">
@@ -59,21 +49,25 @@
           <img src="images/logo.png" alt="Sri Krishna Decoration — KD logo" class="h-8 w-auto object-contain" />
         </span>
         <span class="leading-tight">
-          <span class="block font-display text-[1.15rem] font-semibold tracking-tight text-ink dark:text-bone">Sri Krishna</span>
-          <span class="block text-[10px] tracking-[0.4em] text-ember uppercase">Decoration</span>
+          <span class="block font-display text-[1.15rem] font-semibold tracking-tight text-ink dark:text-bone" data-i18n data-en="Sri Krishna">ಶ್ರೀ ಕೃಷ್ಣ</span>
+          <span class="block text-[10px] tracking-[0.3em] text-ember uppercase" data-i18n data-en="Decoration">ಡೆಕೊರೇಶನ್</span>
         </span>
       </a>
 
-      <div class="hidden lg:flex items-center gap-9 text-[0.92rem] font-medium text-ink2 dark:text-bone/70">
-        <a href="#services" class="link-underline">Services</a>
-        <a href="#why" class="link-underline">Why Us</a>
-        <a href="#gallery" class="link-underline">Work</a>
-        <a href="#reviews" class="link-underline">Reviews</a>
-        <a href="#about" class="link-underline">About</a>
-        <a href="#contact" class="link-underline">Contact</a>
+      <div class="hidden lg:flex items-center gap-8 text-[0.92rem] font-medium text-ink2 dark:text-bone/70">
+        <a href="#services" class="link-underline" data-i18n data-en="Services">ಸೇವೆಗಳು</a>
+        <a href="#why" class="link-underline" data-i18n data-en="Why Us">ಏಕೆ ನಾವು</a>
+        <a href="#gallery" class="link-underline" data-i18n data-en="Work">ಕೆಲಸ</a>
+        <a href="#reviews" class="link-underline" data-i18n data-en="Reviews">ವಿಮರ್ಶೆಗಳು</a>
+        <a href="#about" class="link-underline" data-i18n data-en="About">ನಮ್ಮ ಬಗ್ಗೆ</a>
+        <a href="#contact" class="link-underline" data-i18n data-en="Contact">ಸಂಪರ್ಕ</a>
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Language toggle -->
+        <button id="langBtn" aria-label="Switch language"
+          class="grid h-10 min-w-10 px-2 place-items-center rounded-full border border-ink/15 dark:border-bone/20 text-[0.78rem] font-semibold text-ink dark:text-bone hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">EN</button>
+        <!-- Theme toggle -->
         <button id="themeBtn" aria-label="Toggle dark mode"
           class="grid h-10 w-10 place-items-center rounded-full border border-ink/15 dark:border-bone/20 text-ink dark:text-bone hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">
           <svg class="h-[18px] w-[18px] block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2 12h2m16 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg>
@@ -81,7 +75,7 @@
         </button>
         <a href="https://wa.me/919380440967" target="_blank" rel="noopener"
            class="hidden sm:inline-flex items-center gap-2 rounded-full bg-ink text-paper dark:bg-ember dark:text-paper px-5 py-2.5 text-sm font-semibold hover:bg-ember dark:hover:bg-ember-600 transition">
-          Enquire
+          <span data-i18n data-en="Enquire">ವಿಚಾರಿಸಿ</span>
           <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
         <button id="menuBtn" class="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-ink/15 dark:border-bone/20 text-ink dark:text-bone">
@@ -92,48 +86,43 @@
 
     <div id="mobileMenu" class="lg:hidden hidden border-t border-ink/10 dark:border-bone/10 bg-bone dark:bg-night">
       <div class="px-6 py-4 flex flex-col gap-3 text-base font-medium">
-        <a href="#services" class="py-1">Services</a>
-        <a href="#why" class="py-1">Why Us</a>
-        <a href="#gallery" class="py-1">Work</a>
-        <a href="#reviews" class="py-1">Reviews</a>
-        <a href="#about" class="py-1">About</a>
-        <a href="#contact" class="py-1">Contact</a>
-        <a href="tel:+919380440967" class="mt-2 rounded-full bg-ink text-paper dark:bg-ember text-center py-2.5 font-semibold">Call +91 93804 40967</a>
+        <a href="#services" class="py-1" data-i18n data-en="Services">ಸೇವೆಗಳು</a>
+        <a href="#why" class="py-1" data-i18n data-en="Why Us">ಏಕೆ ನಾವು</a>
+        <a href="#gallery" class="py-1" data-i18n data-en="Work">ಕೆಲಸ</a>
+        <a href="#reviews" class="py-1" data-i18n data-en="Reviews">ವಿಮರ್ಶೆಗಳು</a>
+        <a href="#about" class="py-1" data-i18n data-en="About">ನಮ್ಮ ಬಗ್ಗೆ</a>
+        <a href="#contact" class="py-1" data-i18n data-en="Contact">ಸಂಪರ್ಕ</a>
+        <a href="tel:+919380440967" class="mt-2 rounded-full bg-ink text-paper dark:bg-ember text-center py-2.5 font-semibold" data-i18n data-en="Call +91 93804 40967">ಕರೆ +91 93804 40967</a>
       </div>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
   <section id="home" class="relative overflow-hidden">
-    <!-- atmosphere -->
     <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       <div class="absolute -top-40 -right-32 h-[34rem] w-[34rem] rounded-full bg-ember/15 blur-[110px]"></div>
       <div class="absolute top-40 -left-40 h-[30rem] w-[30rem] rounded-full bg-amber-300/20 dark:bg-ember/10 blur-[120px]"></div>
     </div>
 
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 pt-12 pb-10 lg:pt-16 lg:pb-16 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-      <!-- copy -->
-      <div class="lg:col-span-6 xl:col-span-6">
+      <div class="lg:col-span-6">
         <p class="hero-rise [animation-delay:80ms] inline-flex items-center gap-3 text-[0.72rem] font-semibold tracking-[0.35em] uppercase text-ember">
-          <span class="h-px w-8 bg-ember"></span> Bengaluru · Doddamavalli
+          <span class="h-px w-8 bg-ember"></span> <span data-i18n data-en="Bengaluru · Doddamavalli">ಬೆಂಗಳೂರು · ದೊಡ್ಡಮಾವಳ್ಳಿ</span>
         </p>
 
-        <h1 class="hero-rise [animation-delay:160ms] mt-6 font-display font-semibold tracking-[-0.02em] leading-[0.95] text-ink dark:text-bone text-[2.7rem] sm:text-[3.6rem] xl:text-[4.4rem]">
-          Cooler cars,<br/>
-          calmer glass &amp;<br/>
-          <span class="text-ember">richer</span> interiors.
+        <h1 class="hero-rise [animation-delay:160ms] mt-6 font-display font-semibold tracking-[-0.02em] leading-[1.05] text-ink dark:text-bone text-[2.4rem] sm:text-[3.2rem] xl:text-[3.9rem]">
+          <span data-i18n data-en="Cooler cars,">ತಂಪಾದ ಕಾರುಗಳು,</span><br/>
+          <span data-i18n data-en="calmer glass &amp;">ಶಾಂತ ಗಾಜು ಮತ್ತು</span><br/>
+          <span class="text-ember" data-i18n data-en="richer">ಶ್ರೀಮಂತ</span> <span data-i18n data-en="interiors.">ಒಳಾಂಗಣ.</span>
         </h1>
 
-        <p class="hero-rise [animation-delay:260ms] mt-7 max-w-md text-[1.02rem] leading-relaxed text-ink2 dark:text-bone/70">
-          Sri Krishna Decoration crafts sun-control window films, paint protection, frosted &amp; privacy
-          films, designer wallpapers and complete interior decor — with genuine premium brands and a
-          finish you'll actually notice.
-        </p>
+        <p class="hero-rise [animation-delay:260ms] mt-7 max-w-md text-[1.02rem] leading-relaxed text-ink2 dark:text-bone/70"
+           data-i18n data-en="Sri Krishna Decoration crafts sun-control window films, paint protection, frosted &amp; privacy films, designer wallpapers and complete interior decor — with genuine premium brands and a finish you'll actually notice.">ಶ್ರೀ ಕೃಷ್ಣ ಡೆಕೊರೇಶನ್ — ಸನ್-ಕಂಟ್ರೋಲ್ ವಿಂಡೋ ಫಿಲ್ಮ್‌ಗಳು, ಪೇಂಟ್ ಪ್ರೊಟೆಕ್ಷನ್, ಫ್ರಾಸ್ಟೆಡ್ ಮತ್ತು ಪ್ರೈವಸಿ ಫಿಲ್ಮ್‌ಗಳು, ಡಿಸೈನರ್ ವಾಲ್‌ಪೇಪರ್‌ಗಳು ಮತ್ತು ಸಂಪೂರ್ಣ ಒಳಾಂಗಣ ಅಲಂಕಾರ — ಅಸಲಿ ಪ್ರೀಮಿಯಂ ಬ್ರಾಂಡ್‌ಗಳೊಂದಿಗೆ, ನೀವು ನಿಜವಾಗಿ ಗಮನಿಸುವ ಫಿನಿಶ್.</p>
 
         <div class="hero-rise [animation-delay:360ms] mt-9 flex flex-wrap items-center gap-3">
           <a href="https://wa.me/919380440967?text=Hi%20Sri%20Krishna%20Decoration%2C%20I%27d%20like%20a%20free%20quote" target="_blank" rel="noopener"
              class="group inline-flex items-center gap-2.5 rounded-full bg-ember text-paper px-7 py-4 font-semibold hover:bg-ember-600 transition">
-            Get a free quote
+            <span data-i18n data-en="Get a free quote">ಉಚಿತ ಕೋಟ್ ಪಡೆಯಿರಿ</span>
             <span class="grid h-5 w-5 place-items-center rounded-full bg-paper/20 group-hover:translate-x-0.5 transition"><svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
           </a>
           <a href="tel:+919380440967" class="inline-flex items-center gap-2.5 rounded-full border border-ink/20 dark:border-bone/25 px-7 py-4 font-semibold text-ink dark:text-bone hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">
@@ -142,49 +131,37 @@
           </a>
         </div>
 
-        <!-- mini stats -->
         <div class="hero-rise [animation-delay:460ms] mt-12 grid grid-cols-3 gap-6 max-w-md border-t border-ink/10 dark:border-bone/15 pt-7">
-          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">5.0<span class="text-ember">★</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">20+ reviews</p></div>
-          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">99%</p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">UV blocked</p></div>
-          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">10<span class="text-ember">+</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55">years</p></div>
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">5.0<span class="text-ember">★</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55" data-i18n data-en="20+ reviews">20+ ವಿಮರ್ಶೆಗಳು</p></div>
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">99%</p><p class="mt-1 text-xs text-ink2 dark:text-bone/55" data-i18n data-en="UV blocked">UV ತಡೆ</p></div>
+          <div><p class="font-display text-3xl font-semibold text-ink dark:text-bone">10<span class="text-ember">+</span></p><p class="mt-1 text-xs text-ink2 dark:text-bone/55" data-i18n data-en="years">ವರ್ಷಗಳು</p></div>
         </div>
       </div>
 
-      <!-- shop imagery -->
-      <div class="lg:col-span-6 xl:col-span-6 relative">
+      <div class="lg:col-span-6 relative">
         <div class="hero-rise [animation-delay:300ms] relative">
-          <!-- main: storefront -->
           <figure class="relative overflow-hidden rounded-[2rem] ring-1 ring-ink/10 dark:ring-bone/10 shadow-2xl shadow-ink/20">
             <img src="images/g1.jpg" alt="Sri Krishna Decoration storefront in Bengaluru, decorated with marigold garlands"
                  class="h-[28rem] sm:h-[34rem] w-full object-cover" loading="eager" />
             <figcaption class="absolute left-5 bottom-5 rounded-full bg-paper/90 dark:bg-night/85 backdrop-blur px-4 py-2 text-[0.78rem] font-semibold text-ink dark:text-bone ring-1 ring-ink/10 dark:ring-bone/15">
-              📍 Our store · K.C. Puttanna Road
+              📍 <span data-i18n data-en="Our store · K.C. Puttanna Road">ನಮ್ಮ ಅಂಗಡಿ · ಕೆ.ಸಿ. ಪುಟ್ಟಣ್ಣ ರಸ್ತೆ</span>
             </figcaption>
           </figure>
-
-          <!-- overlapping car detail -->
           <figure class="absolute -bottom-8 -left-6 hidden sm:block w-40 h-52 overflow-hidden rounded-2xl ring-4 ring-bone dark:ring-night shadow-xl">
             <img src="images/g2.jpg" alt="Sun-control film on a car window" class="h-full w-full object-cover" loading="lazy" />
           </figure>
-
-          <!-- rating chip -->
           <div class="absolute -top-5 -right-3 sm:-right-5 rounded-2xl bg-ink text-paper dark:bg-ember px-5 py-4 shadow-xl">
             <div class="flex text-amber-300 text-sm leading-none">★★★★★</div>
-            <p class="mt-1.5 text-[0.7rem] tracking-wide text-paper/80">Rated by happy<br/>customers</p>
+            <p class="mt-1.5 text-[0.7rem] tracking-wide text-paper/80" data-i18n data-en="Rated by happy customers">ಸಂತೋಷದ ಗ್ರಾಹಕರಿಂದ ರೇಟಿಂಗ್</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- brand marquee -->
     <div class="border-y border-ink/10 dark:border-bone/10 bg-paper/60 dark:bg-panel/50 py-4 overflow-hidden">
       <div class="marquee flex items-center gap-12 whitespace-nowrap text-ink2 dark:text-bone/60 font-display text-xl sm:text-2xl">
-        <span class="mq-group flex items-center gap-12 pr-12">
-          <span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span>
-        </span>
-        <span class="mq-group flex items-center gap-12 pr-12" aria-hidden="true">
-          <span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span>
-        </span>
+        <span class="mq-group flex items-center gap-12 pr-12"><span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span></span>
+        <span class="mq-group flex items-center gap-12 pr-12" aria-hidden="true"><span>3M</span><span class="text-ember">✦</span><span>Garware Suncontrol</span><span class="text-ember">✦</span><span>LX&nbsp;Hausys</span><span class="text-ember">✦</span><span>Avery&nbsp;Dennison</span><span class="text-ember">✦</span><span>McCal</span><span class="text-ember">✦</span><span>Alps&nbsp;Protect</span><span class="text-ember">✦</span></span>
       </div>
     </div>
   </section>
@@ -195,19 +172,19 @@
       <a href="https://maps.google.com/?q=Sri+Krishna+Decoration+K.C.Puttanna+Rd+Doddamavalli+Bengaluru+560004" target="_blank" rel="noopener"
          class="group flex items-center gap-4 rounded-2xl border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel px-5 py-5 hover:border-ember hover:-translate-y-0.5 transition">
         <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ember/10 text-ember"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
-        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone">Visit our store</span><span class="block text-sm text-ink2 dark:text-bone/60 truncate">K.C. Puttanna Rd, Doddamavalli</span></span>
+        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone" data-i18n data-en="Visit our store">ಅಂಗಡಿಗೆ ಭೇಟಿ ನೀಡಿ</span><span class="block text-sm text-ink2 dark:text-bone/60 truncate" data-i18n data-en="K.C. Puttanna Rd, Doddamavalli">ಕೆ.ಸಿ. ಪುಟ್ಟಣ್ಣ ರಸ್ತೆ, ದೊಡ್ಡಮಾವಳ್ಳಿ</span></span>
         <svg class="ml-auto h-5 w-5 text-ink2 dark:text-bone/50 group-hover:text-ember group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
       <a href="https://wa.me/919380440967?text=Hi%20Sri%20Krishna%20Decoration%2C%20I%27d%20like%20a%20free%20quote" target="_blank" rel="noopener"
          class="group flex items-center gap-4 rounded-2xl border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel px-5 py-5 hover:border-ember hover:-translate-y-0.5 transition">
         <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#25D366]/12 text-[#1da851]"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg></span>
-        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone">WhatsApp us</span><span class="block text-sm text-ink2 dark:text-bone/60">+91 93804 40967</span></span>
+        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone" data-i18n data-en="Chat on WhatsApp">ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿ ಚಾಟ್ ಮಾಡಿ</span><span class="block text-sm text-ink2 dark:text-bone/60">+91 93804 40967</span></span>
         <svg class="ml-auto h-5 w-5 text-ink2 dark:text-bone/50 group-hover:text-ember group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
       <a href="tel:+919380440967"
          class="group flex items-center gap-4 rounded-2xl border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel px-5 py-5 hover:border-ember hover:-translate-y-0.5 transition">
         <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ember/10 text-ember"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg></span>
-        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone">Call now</span><span class="block text-sm text-ink2 dark:text-bone/60">+91 93804 40967</span></span>
+        <span class="min-w-0"><span class="block font-display text-lg font-semibold text-ink dark:text-bone" data-i18n data-en="Call us now">ಈಗ ಕರೆ ಮಾಡಿ</span><span class="block text-sm text-ink2 dark:text-bone/60">+91 93804 40967</span></span>
         <svg class="ml-auto h-5 w-5 text-ink2 dark:text-bone/50 group-hover:text-ember group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
     </div>
@@ -218,55 +195,54 @@
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
         <div>
-          <p class="eyebrow">01 — What we do</p>
-          <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em] max-w-xl">From cars &amp; glass to walls &amp; interiors.</h2>
+          <p class="eyebrow" data-i18n data-en="01 — What we do">01 — ನಾವು ಏನು ಮಾಡುತ್ತೇವೆ</p>
+          <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em] max-w-xl" data-i18n data-en="From cars &amp; glass to walls &amp; interiors.">ಕಾರು ಮತ್ತು ಗಾಜಿನಿಂದ ಗೋಡೆ ಮತ್ತು ಒಳಾಂಗಣದವರೆಗೆ.</h2>
         </div>
-        <p class="md:max-w-xs text-ink2 dark:text-bone/65">One trusted studio for every film and decor need — done with genuine products and real craft.</p>
+        <p class="md:max-w-xs text-ink2 dark:text-bone/65" data-i18n data-en="One trusted studio for every film and decor need — done with genuine products and real craft.">ಪ್ರತಿ ಫಿಲ್ಮ್ ಮತ್ತು ಅಲಂಕಾರದ ಅಗತ್ಯಕ್ಕೆ ಒಂದು ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಟುಡಿಯೋ — ಅಸಲಿ ಉತ್ಪನ್ನ ಮತ್ತು ನಿಜವಾದ ಕೌಶಲ್ಯದೊಂದಿಗೆ.</p>
       </div>
 
       <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 dark:bg-bone/10 rounded-[1.75rem] overflow-hidden ring-1 ring-ink/10 dark:ring-bone/10">
-        <!-- card -->
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">01</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M2 12h2m16 0h2M4.2 19.8l1.4-1.4m12.8-12.8 1.4-1.4"/></svg></div>
-          <h3 class="svc-h">Sun-Control Films</h3>
-          <p class="svc-p">Garware &amp; 3M heat-rejection films for cars &amp; glass — block UV/IR, cut glare, stay up to 15°C cooler.</p>
+          <h3 class="svc-h" data-i18n data-en="Sun-Control Films">ಸನ್-ಕಂಟ್ರೋಲ್ ಫಿಲ್ಮ್‌ಗಳು</h3>
+          <p class="svc-p" data-i18n data-en="Garware &amp; 3M heat-rejection films for cars &amp; glass — block UV/IR, cut glare, stay up to 15°C cooler.">ಕಾರು ಮತ್ತು ಗಾಜಿಗೆ ಗರ್‌ವೇರ್ ಮತ್ತು 3M ಶಾಖ-ನಿರೋಧಕ ಫಿಲ್ಮ್‌ಗಳು — UV/IR ತಡೆಯಿರಿ, ಹೊಳಪು ಕಡಿಮೆ, 15°C ವರೆಗೆ ತಂಪು.</p>
         </article>
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">02</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.2 7.5 8 9 4.8-1.5 8-4.5 8-9V6l-8-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg></div>
-          <h3 class="svc-h">Paint Protection (PPF)</h3>
-          <p class="svc-p">Self-healing film that guards your car's paint against scratches, stone chips, UV &amp; oxidation.</p>
+          <h3 class="svc-h" data-i18n data-en="Paint Protection (PPF)">ಪೇಂಟ್ ಪ್ರೊಟೆಕ್ಷನ್ (PPF)</h3>
+          <p class="svc-p" data-i18n data-en="Self-healing film that guards your car's paint against scratches, stone chips, UV &amp; oxidation.">ಗೀರು, ಕಲ್ಲಿನ ಹೊಡೆತ, UV ಮತ್ತು ಆಕ್ಸಿಡೇಶನ್‌ನಿಂದ ನಿಮ್ಮ ಕಾರಿನ ಪೇಂಟ್ ರಕ್ಷಿಸುವ ಸೆಲ್ಫ್-ಹೀಲಿಂಗ್ ಫಿಲ್ಮ್.</p>
         </article>
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">03</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M3 9h18M9 4v16"/></svg></div>
-          <h3 class="svc-h">Frosted &amp; Privacy Films</h3>
-          <p class="svc-p">Frosted, etched &amp; one-way films for offices, cabins, homes &amp; shopfronts — privacy with daylight.</p>
+          <h3 class="svc-h" data-i18n data-en="Frosted &amp; Privacy Films">ಫ್ರಾಸ್ಟೆಡ್ ಮತ್ತು ಪ್ರೈವಸಿ ಫಿಲ್ಮ್‌ಗಳು</h3>
+          <p class="svc-p" data-i18n data-en="Frosted, etched &amp; one-way films for offices, cabins, homes &amp; shopfronts — privacy with daylight.">ಆಫೀಸ್, ಕ್ಯಾಬಿನ್, ಮನೆ ಮತ್ತು ಅಂಗಡಿಗಳಿಗೆ ಫ್ರಾಸ್ಟೆಡ್, ಎಚ್ಡ್ ಮತ್ತು ಒನ್-ವೇ ಫಿಲ್ಮ್‌ಗಳು — ಬೆಳಕಿನೊಂದಿಗೆ ಗೌಪ್ಯತೆ.</p>
         </article>
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">04</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14M4 19h16M4 19l5-6 3 3 4-5 4 8"/></svg></div>
-          <h3 class="svc-h">Designer Wallpapers</h3>
-          <p class="svc-p">Premium imported &amp; customised wallpapers for living rooms, bedrooms, offices &amp; feature walls.</p>
+          <h3 class="svc-h" data-i18n data-en="Designer Wallpapers">ಡಿಸೈನರ್ ವಾಲ್‌ಪೇಪರ್‌ಗಳು</h3>
+          <p class="svc-p" data-i18n data-en="Premium imported &amp; customised wallpapers for living rooms, bedrooms, offices &amp; feature walls.">ಲಿವಿಂಗ್ ರೂಂ, ಬೆಡ್‌ರೂಂ, ಆಫೀಸ್ ಮತ್ತು ಫೀಚರ್ ಗೋಡೆಗಳಿಗೆ ಪ್ರೀಮಿಯಂ ಆಮದು ಮತ್ತು ಕಸ್ಟಮೈಸ್ಡ್ ವಾಲ್‌ಪೇಪರ್‌ಗಳು.</p>
         </article>
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">05</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
-          <h3 class="svc-h">Interior Decor</h3>
-          <p class="svc-p">Complete styling — vinyl wraps, glass partitions, decorative panels &amp; finishing touches.</p>
+          <h3 class="svc-h" data-i18n data-en="Interior Decor">ಒಳಾಂಗಣ ಅಲಂಕಾರ</h3>
+          <p class="svc-p" data-i18n data-en="Complete styling — vinyl wraps, glass partitions, decorative panels &amp; finishing touches.">ಸಂಪೂರ್ಣ ಸ್ಟೈಲಿಂಗ್ — ವಿನೈಲ್ ರ್ಯಾಪ್, ಗಾಜಿನ ವಿಭಜನೆ, ಅಲಂಕಾರಿಕ ಪ್ಯಾನೆಲ್ ಮತ್ತು ಫಿನಿಶಿಂಗ್.</p>
         </article>
         <article data-reveal class="svc bg-paper dark:bg-panel">
           <span class="svc-num">06</span>
           <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2 3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6l-9-4Z"/></svg></div>
-          <h3 class="svc-h">Safety &amp; Glazing Films</h3>
-          <p class="svc-p">Shatter-resistant glazing films that hold glass together and add a real layer of security.</p>
+          <h3 class="svc-h" data-i18n data-en="Safety &amp; Glazing Films">ಸೇಫ್ಟಿ ಮತ್ತು ಗ್ಲೇಜಿಂಗ್ ಫಿಲ್ಮ್‌ಗಳು</h3>
+          <p class="svc-p" data-i18n data-en="Shatter-resistant glazing films that hold glass together and add a real layer of security.">ಗಾಜನ್ನು ಒಟ್ಟಿಗೆ ಹಿಡಿದಿಟ್ಟು ಭದ್ರತೆಯ ಪದರ ಸೇರಿಸುವ ಶ್ಯಾಟರ್-ರೆಸಿಸ್ಟೆಂಟ್ ಗ್ಲೇಜಿಂಗ್ ಫಿಲ್ಮ್‌ಗಳು.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ WHY / FEATURE ============ -->
+  <!-- ============ WHY ============ -->
   <section id="why" class="py-24 bg-paper dark:bg-panel/40 border-y border-ink/10 dark:border-bone/10">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
       <div data-reveal class="relative order-2 lg:order-1">
@@ -275,20 +251,20 @@
         </figure>
         <div class="absolute -bottom-7 right-6 lg:-right-7 rounded-2xl bg-ink text-paper dark:bg-ember px-6 py-5 shadow-xl">
           <p class="font-display text-4xl font-semibold leading-none">10+</p>
-          <p class="mt-2 text-xs text-paper/75 leading-tight">years of trusted<br/>workmanship</p>
+          <p class="mt-2 text-xs text-paper/75 leading-tight" data-i18n data-en="years of trusted workmanship">ವರ್ಷಗಳ ವಿಶ್ವಾಸಾರ್ಹ ಕೆಲಸ</p>
         </div>
       </div>
 
       <div data-reveal class="order-1 lg:order-2">
-        <p class="eyebrow">02 — Why us</p>
-        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Quality you can see, comfort you can feel.</h2>
-        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-lg">We don't just apply film — we engineer comfort and style. Genuine products, a flawless finish, and honest advice on every job.</p>
+        <p class="eyebrow" data-i18n data-en="02 — Why us">02 — ಏಕೆ ನಾವು</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em]" data-i18n data-en="Quality you can see, comfort you can feel.">ನೀವು ಕಾಣುವ ಗುಣಮಟ್ಟ, ನೀವು ಅನುಭವಿಸುವ ಆರಾಮ.</h2>
+        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-lg" data-i18n data-en="We don't just apply film — we engineer comfort and style. Genuine products, a flawless finish, and honest advice on every job.">ನಾವು ಕೇವಲ ಫಿಲ್ಮ್ ಹಾಕುವುದಿಲ್ಲ — ಆರಾಮ ಮತ್ತು ಶೈಲಿಯನ್ನು ರೂಪಿಸುತ್ತೇವೆ. ಅಸಲಿ ಉತ್ಪನ್ನ, ದೋಷರಹಿತ ಫಿನಿಶ್, ಮತ್ತು ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಪ್ರಾಮಾಣಿಕ ಸಲಹೆ.</p>
 
         <dl class="mt-10 divide-y divide-ink/10 dark:divide-bone/10 border-y border-ink/10 dark:border-bone/10">
-          <div class="feat"><dt>Genuine branded products</dt><dd>Authentic Garware, 3M & LX Hausys with warranty.</dd></div>
-          <div class="feat"><dt>Flawless, bubble-free finish</dt><dd>Dust-controlled, precision-cut installation.</dd></div>
-          <div class="feat"><dt>Transparent, fair pricing</dt><dd>Clear quotes — no hidden costs, ever.</dd></div>
-          <div class="feat"><dt>After-sales support</dt><dd>We stand behind every single job.</dd></div>
+          <div class="feat"><dt data-i18n data-en="Genuine branded products">ಅಸಲಿ ಬ್ರಾಂಡೆಡ್ ಉತ್ಪನ್ನಗಳು</dt><dd data-i18n data-en="Authentic Garware, 3M &amp; LX Hausys with warranty.">ವಾರಂಟಿಯೊಂದಿಗೆ ಅಸಲಿ ಗರ್‌ವೇರ್, 3M ಮತ್ತು LX Hausys.</dd></div>
+          <div class="feat"><dt data-i18n data-en="Flawless, bubble-free finish">ದೋಷರಹಿತ, ಬಬಲ್-ಫ್ರೀ ಫಿನಿಶ್</dt><dd data-i18n data-en="Dust-controlled, precision-cut installation.">ಧೂಳು-ನಿಯಂತ್ರಿತ, ನಿಖರ-ಕಟ್ ಅಳವಡಿಕೆ.</dd></div>
+          <div class="feat"><dt data-i18n data-en="Transparent, fair pricing">ಪಾರದರ್ಶಕ, ನ್ಯಾಯಯುತ ಬೆಲೆ</dt><dd data-i18n data-en="Clear quotes — no hidden costs, ever.">ಸ್ಪಷ್ಟ ಕೋಟ್ — ಯಾವುದೇ ಮರೆಮಾಚಿದ ವೆಚ್ಚವಿಲ್ಲ.</dd></div>
+          <div class="feat"><dt data-i18n data-en="After-sales support">ಮಾರಾಟದ ನಂತರದ ಬೆಂಬಲ</dt><dd data-i18n data-en="We stand behind every single job.">ಪ್ರತಿ ಕೆಲಸದ ಹಿಂದೆಯೂ ನಾವು ನಿಲ್ಲುತ್ತೇವೆ.</dd></div>
         </dl>
       </div>
     </div>
@@ -298,17 +274,17 @@
   <section id="gallery" class="py-24">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
       <div data-reveal>
-        <p class="eyebrow">03 — Selected work</p>
-        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em] max-w-xl">A glimpse of the craft.</h2>
+        <p class="eyebrow" data-i18n data-en="03 — Selected work">03 — ಆಯ್ದ ಕೆಲಸ</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em] max-w-xl" data-i18n data-en="A glimpse of the craft.">ನಮ್ಮ ಕೌಶಲ್ಯದ ಒಂದು ನೋಟ.</h2>
       </div>
 
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 auto-rows-[220px]">
-        <figure data-reveal class="tile row-span-2"><img src="images/g2.jpg" alt="Car sun-control film"/><figcaption><span class="t-k">Automotive</span>Sun-Control Film</figcaption></figure>
-        <figure data-reveal class="tile"><img src="images/g3.jpg" alt="Garware film products"/><figcaption><span class="t-k">Products</span>Genuine Film Range</figcaption></figure>
-        <figure data-reveal class="tile"><img src="images/g7.jpg" alt="Paint protection film application"/><figcaption><span class="t-k">Detailing</span>Paint Protection</figcaption></figure>
-        <figure data-reveal class="tile row-span-2"><img src="images/g5.jpg" alt="Frosted glass and wallpaper interior"/><figcaption><span class="t-k">Interiors</span>Frosted Glass &amp; Wallpaper</figcaption></figure>
-        <figure data-reveal class="tile"><img src="images/g8.jpg" alt="Window film rolls"/><figcaption><span class="t-k">In stock</span>Window Film Rolls</figcaption></figure>
-        <figure data-reveal class="tile"><img src="images/g4.jpg" alt="Sri Krishna Decoration storefront"/><figcaption><span class="t-k">Visit us</span>Our Store</figcaption></figure>
+        <figure data-reveal class="tile row-span-2"><img src="images/g2.jpg" alt="Car sun-control film"/><figcaption><span class="t-k" data-i18n data-en="Automotive">ವಾಹನ</span><span data-i18n data-en="Sun-Control Film">ಸನ್-ಕಂಟ್ರೋಲ್ ಫಿಲ್ಮ್</span></figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g3.jpg" alt="Garware film products"/><figcaption><span class="t-k" data-i18n data-en="Products">ಉತ್ಪನ್ನಗಳು</span><span data-i18n data-en="Genuine Film Range">ಅಸಲಿ ಫಿಲ್ಮ್ ಶ್ರೇಣಿ</span></figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g7.jpg" alt="Paint protection film application"/><figcaption><span class="t-k" data-i18n data-en="Detailing">ಡಿಟೈಲಿಂಗ್</span><span data-i18n data-en="Paint Protection">ಪೇಂಟ್ ಪ್ರೊಟೆಕ್ಷನ್</span></figcaption></figure>
+        <figure data-reveal class="tile row-span-2"><img src="images/g5.jpg" alt="Frosted glass and wallpaper interior"/><figcaption><span class="t-k" data-i18n data-en="Interiors">ಒಳಾಂಗಣ</span><span data-i18n data-en="Frosted Glass &amp; Wallpaper">ಫ್ರಾಸ್ಟೆಡ್ ಗಾಜು ಮತ್ತು ವಾಲ್‌ಪೇಪರ್</span></figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g8.jpg" alt="Window film rolls"/><figcaption><span class="t-k" data-i18n data-en="In stock">ಸ್ಟಾಕ್‌ನಲ್ಲಿ</span><span data-i18n data-en="Window Film Rolls">ವಿಂಡೋ ಫಿಲ್ಮ್ ರೋಲ್‌ಗಳು</span></figcaption></figure>
+        <figure data-reveal class="tile"><img src="images/g4.jpg" alt="Sri Krishna Decoration storefront"/><figcaption><span class="t-k" data-i18n data-en="Visit us">ಭೇಟಿ ನೀಡಿ</span><span data-i18n data-en="Our Store">ನಮ್ಮ ಅಂಗಡಿ</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -317,25 +293,18 @@
   <section id="about" class="py-24 bg-paper dark:bg-panel/40 border-y border-ink/10 dark:border-bone/10">
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
       <div data-reveal>
-        <p class="eyebrow">04 — About</p>
-        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Your neighbourhood decoration experts.</h2>
-        <p class="mt-6 text-ink2 dark:text-bone/70 leading-relaxed">
-          Tucked into Doddamavalli, <strong class="text-ink dark:text-bone font-semibold">Sri Krishna Decoration</strong> has earned a
-          5-star name for car &amp; glass films, wallpapers and interior decor. As an authorised dealer of Garware, 3M, LX Hausys,
-          Avery Dennison, McCal and Alps, we bring genuine products and skilled hands to every project — big or small.
-        </p>
-        <p class="mt-4 text-ink2 dark:text-bone/70 leading-relaxed">
-          Whether it's keeping your car cool, adding privacy to your office, or transforming a room with designer wallpaper,
-          we treat your space like our own.
-        </p>
+        <p class="eyebrow" data-i18n data-en="04 — About">04 — ನಮ್ಮ ಬಗ್ಗೆ</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em]" data-i18n data-en="Your neighbourhood decoration experts.">ನಿಮ್ಮ ನೆರೆಹೊರೆಯ ಅಲಂಕಾರ ತಜ್ಞರು.</h2>
+        <p class="mt-6 text-ink2 dark:text-bone/70 leading-relaxed" data-i18n data-en="Tucked into Doddamavalli, Sri Krishna Decoration has earned a 5-star name for car &amp; glass films, wallpapers and interior decor. As an authorised dealer of Garware, 3M, LX Hausys, Avery Dennison, McCal and Alps, we bring genuine products and skilled hands to every project — big or small.">ದೊಡ್ಡಮಾವಳ್ಳಿಯಲ್ಲಿರುವ ಶ್ರೀ ಕೃಷ್ಣ ಡೆಕೊರೇಶನ್, ಕಾರು ಮತ್ತು ಗಾಜಿನ ಫಿಲ್ಮ್, ವಾಲ್‌ಪೇಪರ್ ಮತ್ತು ಒಳಾಂಗಣ ಅಲಂಕಾರಕ್ಕೆ 5-ಸ್ಟಾರ್ ಹೆಸರು ಗಳಿಸಿದೆ. ಗರ್‌ವೇರ್, 3M, LX Hausys, Avery Dennison, McCal ಮತ್ತು Alps ನ ಅಧಿಕೃತ ಡೀಲರ್ ಆಗಿ, ಪ್ರತಿ ಯೋಜನೆಗೆ — ದೊಡ್ಡದಾಗಲಿ ಚಿಕ್ಕದಾಗಲಿ — ಅಸಲಿ ಉತ್ಪನ್ನ ಮತ್ತು ಕುಶಲ ಕೈಗಳನ್ನು ತರುತ್ತೇವೆ.</p>
+        <p class="mt-4 text-ink2 dark:text-bone/70 leading-relaxed" data-i18n data-en="Whether it's keeping your car cool, adding privacy to your office, or transforming a room with designer wallpaper, we treat your space like our own.">ನಿಮ್ಮ ಕಾರನ್ನು ತಂಪಾಗಿಡುವುದು, ಆಫೀಸ್‌ಗೆ ಗೌಪ್ಯತೆ ಸೇರಿಸುವುದು, ಅಥವಾ ಡಿಸೈನರ್ ವಾಲ್‌ಪೇಪರ್‌ನಿಂದ ಕೋಣೆ ಬದಲಾಯಿಸುವುದು — ನಿಮ್ಮ ಜಾಗವನ್ನು ನಮ್ಮದೇ ಎಂದು ಭಾವಿಸುತ್ತೇವೆ.</p>
         <div class="mt-9 flex flex-wrap gap-3">
           <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-ember text-paper px-7 py-4 font-semibold hover:bg-ember-600 transition">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg>
-            Visit our store
+            <span data-i18n data-en="Visit our store">ಅಂಗಡಿಗೆ ಭೇಟಿ ನೀಡಿ</span>
           </a>
           <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-ink/20 dark:border-bone/25 px-7 py-4 font-semibold hover:bg-ink hover:text-paper dark:hover:bg-bone dark:hover:text-ink transition">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg>
-            Chat on WhatsApp
+            <span data-i18n data-en="Chat on WhatsApp">ವಾಟ್ಸ್‌ಆ್ಯಪ್‌ನಲ್ಲಿ ಚಾಟ್ ಮಾಡಿ</span>
           </a>
         </div>
       </div>
@@ -352,14 +321,14 @@
     <div class="mx-auto max-w-[1280px] px-5 sm:px-8">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-reveal>
         <div>
-          <p class="eyebrow">05 — Reviews</p>
-          <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em] max-w-xl">Loved by 20+ happy customers.</h2>
+          <p class="eyebrow" data-i18n data-en="05 — Reviews">05 — ವಿಮರ್ಶೆಗಳು</p>
+          <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em] max-w-xl" data-i18n data-en="Loved by 20+ happy customers.">20+ ಸಂತೋಷದ ಗ್ರಾಹಕರಿಂದ ಮೆಚ್ಚುಗೆ.</h2>
         </div>
         <div class="flex items-center gap-4 rounded-2xl border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel px-6 py-4">
           <p class="font-display text-5xl font-semibold text-ink dark:text-bone leading-none">5.0</p>
           <div>
             <div class="text-ember text-lg leading-none">★★★★★</div>
-            <p class="mt-1.5 text-sm text-ink2 dark:text-bone/60">Rated 5/5 · 20+ reviews</p>
+            <p class="mt-1.5 text-sm text-ink2 dark:text-bone/60" data-i18n data-en="Rated 5/5 · 20+ reviews">5/5 ರೇಟಿಂಗ್ · 20+ ವಿಮರ್ಶೆಗಳು</p>
           </div>
         </div>
       </div>
@@ -367,26 +336,26 @@
       <div class="mt-14 grid md:grid-cols-3 gap-5">
         <blockquote data-reveal class="rounded-[1.5rem] border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel p-7">
           <div class="text-ember leading-none">★★★★★</div>
-          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed">"My car's interior stays so much cooler now after the Garware film. Neat work, no bubbles, finished on time. Highly recommend!"</p>
+          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed" data-i18n data-en="&quot;My car's interior stays so much cooler now after the Garware film. Neat work, no bubbles, finished on time. Highly recommend!&quot;">"ಗರ್‌ವೇರ್ ಫಿಲ್ಮ್ ಹಾಕಿದ ಮೇಲೆ ನನ್ನ ಕಾರಿನ ಒಳಭಾಗ ತುಂಬಾ ತಂಪಾಗಿರುತ್ತದೆ. ಅಚ್ಚುಕಟ್ಟಾದ ಕೆಲಸ, ಬಬಲ್ ಇಲ್ಲ, ಸಮಯಕ್ಕೆ ಮುಗಿಸಿದರು. ಖಂಡಿತ ಶಿಫಾರಸು ಮಾಡುತ್ತೇನೆ!"</p>
           <footer class="mt-6 flex items-center gap-3">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-ember/12 text-ember font-display font-semibold">R</span>
-            <span><span class="block font-semibold text-ink dark:text-bone">Rakesh M.</span><span class="block text-xs text-ink2 dark:text-bone/55">Car owner · Jayanagar</span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone">Rakesh M.</span><span class="block text-xs text-ink2 dark:text-bone/55" data-i18n data-en="Car owner · Jayanagar">ಕಾರು ಮಾಲೀಕ · ಜಯನಗರ</span></span>
           </footer>
         </blockquote>
         <blockquote data-reveal class="rounded-[1.5rem] border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel p-7">
           <div class="text-ember leading-none">★★★★★</div>
-          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed">"Got frosted privacy film and wallpaper for our office cabins. Looks premium and professional. Great service and fair pricing."</p>
+          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed" data-i18n data-en="&quot;Got frosted privacy film and wallpaper for our office cabins. Looks premium and professional. Great service and fair pricing.&quot;">"ನಮ್ಮ ಆಫೀಸ್ ಕ್ಯಾಬಿನ್‌ಗಳಿಗೆ ಫ್ರಾಸ್ಟೆಡ್ ಪ್ರೈವಸಿ ಫಿಲ್ಮ್ ಮತ್ತು ವಾಲ್‌ಪೇಪರ್ ಹಾಕಿಸಿದೆವು. ಪ್ರೀಮಿಯಂ ಮತ್ತು ವೃತ್ತಿಪರವಾಗಿ ಕಾಣುತ್ತದೆ. ಉತ್ತಮ ಸೇವೆ ಮತ್ತು ನ್ಯಾಯಯುತ ಬೆಲೆ."</p>
           <footer class="mt-6 flex items-center gap-3">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-ember/12 text-ember font-display font-semibold">S</span>
-            <span><span class="block font-semibold text-ink dark:text-bone">Sneha P.</span><span class="block text-xs text-ink2 dark:text-bone/55">Office manager · BTM Layout</span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone">Sneha P.</span><span class="block text-xs text-ink2 dark:text-bone/55" data-i18n data-en="Office manager · BTM Layout">ಆಫೀಸ್ ಮ್ಯಾನೇಜರ್ · BTM ಲೇಔಟ್</span></span>
           </footer>
         </blockquote>
         <blockquote data-reveal class="rounded-[1.5rem] border border-ink/10 dark:border-bone/10 bg-paper dark:bg-panel p-7">
           <div class="text-ember leading-none">★★★★★</div>
-          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed">"Genuine 3M film with proper bill and warranty. Honest people who explain everything clearly. Very satisfied with the work."</p>
+          <p class="mt-4 text-ink2 dark:text-bone/75 leading-relaxed" data-i18n data-en="&quot;Genuine 3M film with proper bill and warranty. Honest people who explain everything clearly. Very satisfied with the work.&quot;">"ಸರಿಯಾದ ಬಿಲ್ ಮತ್ತು ವಾರಂಟಿಯೊಂದಿಗೆ ಅಸಲಿ 3M ಫಿಲ್ಮ್. ಎಲ್ಲವನ್ನೂ ಸ್ಪಷ್ಟವಾಗಿ ವಿವರಿಸುವ ಪ್ರಾಮಾಣಿಕ ಜನ. ಕೆಲಸದಿಂದ ತುಂಬಾ ತೃಪ್ತಿ."</p>
           <footer class="mt-6 flex items-center gap-3">
             <span class="grid h-11 w-11 place-items-center rounded-full bg-ember/12 text-ember font-display font-semibold">A</span>
-            <span><span class="block font-semibold text-ink dark:text-bone">Arjun K.</span><span class="block text-xs text-ink2 dark:text-bone/55">Home owner · Mavalli</span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone">Arjun K.</span><span class="block text-xs text-ink2 dark:text-bone/55" data-i18n data-en="Home owner · Mavalli">ಮನೆ ಮಾಲೀಕ · ಮಾವಳ್ಳಿ</span></span>
           </footer>
         </blockquote>
       </div>
@@ -400,17 +369,17 @@
         <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-ember/40 dark:bg-paper/10 blur-3xl"></div>
         <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div>
-            <p class="text-[0.72rem] font-semibold tracking-[0.35em] uppercase text-ember dark:text-paper/80">Let's begin</p>
-            <h2 class="mt-4 font-display text-[2rem] sm:text-[2.8rem] font-semibold leading-[1.03] max-w-xl">Ready to transform your car, glass or walls?</h2>
+            <p class="text-[0.72rem] font-semibold tracking-[0.35em] uppercase text-ember dark:text-paper/80" data-i18n data-en="Let's begin">ಪ್ರಾರಂಭಿಸೋಣ</p>
+            <h2 class="mt-4 font-display text-[2rem] sm:text-[2.8rem] font-semibold leading-[1.05] max-w-xl" data-i18n data-en="Ready to transform your car, glass or walls?">ನಿಮ್ಮ ಕಾರು, ಗಾಜು ಅಥವಾ ಗೋಡೆಗಳನ್ನು ಬದಲಾಯಿಸಲು ಸಿದ್ಧವೇ?</h2>
           </div>
           <div class="flex flex-col sm:flex-row gap-3 shrink-0">
             <a href="https://wa.me/919380440967" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-paper text-ink px-7 py-4 font-semibold hover:bg-ember hover:text-paper transition">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg>
-              WhatsApp us
+              <span data-i18n data-en="WhatsApp us">ವಾಟ್ಸ್‌ಆ್ಯಪ್ ಮಾಡಿ</span>
             </a>
             <a href="tel:+919380440967" class="inline-flex items-center justify-center gap-2 rounded-full border border-paper/40 px-7 py-4 font-semibold hover:bg-paper hover:text-ink transition">
               <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg>
-              Call 93804 40967
+              <span data-i18n data-en="Call 93804 40967">ಕರೆ 93804 40967</span>
             </a>
           </div>
         </div>
@@ -420,24 +389,24 @@
 
   <!-- ============ CONTACT ============ -->
   <section id="contact" class="py-24 bg-paper dark:bg-panel/40 border-t border-ink/10 dark:border-bone/10">
-    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14">
+    <div class="mx-auto max-w-[1280px] px-5 sm:px-8 grid lg:grid-cols-2 gap-12">
       <div data-reveal>
-        <p class="eyebrow">06 — Get in touch</p>
-        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.02] tracking-[-0.02em]">Visit us or send a message.</h2>
-        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-md">Happy to help you choose the perfect film, wallpaper or decor. Reach out and we'll respond quickly.</p>
+        <p class="eyebrow" data-i18n data-en="06 — Get in touch">06 — ಸಂಪರ್ಕಿಸಿ</p>
+        <h2 class="mt-4 font-display text-[2.2rem] sm:text-[3rem] font-semibold leading-[1.05] tracking-[-0.02em]" data-i18n data-en="Visit us or send a message.">ಭೇಟಿ ನೀಡಿ ಅಥವಾ ಸಂದೇಶ ಕಳುಹಿಸಿ.</h2>
+        <p class="mt-5 text-ink2 dark:text-bone/65 max-w-md" data-i18n data-en="Happy to help you choose the perfect film, wallpaper or decor. Reach out and we'll respond quickly.">ಪರಿಪೂರ್ಣ ಫಿಲ್ಮ್, ವಾಲ್‌ಪೇಪರ್ ಅಥವಾ ಅಲಂಕಾರ ಆಯ್ಕೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡಲು ಸಂತೋಷ. ಸಂಪರ್ಕಿಸಿ, ನಾವು ಬೇಗ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತೇವೆ.</p>
 
         <div class="mt-9 space-y-6">
           <a href="https://maps.google.com/?q=Sri+Krishna+Decoration+K.C.Puttanna+Rd+Doddamavalli+Bengaluru+560004" target="_blank" rel="noopener" class="flex gap-4 group">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
-            <span><span class="block font-semibold text-ink dark:text-bone group-hover:text-ember transition">Our address</span><span class="text-sm text-ink2 dark:text-bone/60">No. 9, Ground Floor, K.C. Puttanna Road, Near Bright Future School, Doddamavalli, Bengaluru — 560004</span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone group-hover:text-ember transition" data-i18n data-en="Our address">ನಮ್ಮ ವಿಳಾಸ</span><span class="text-sm text-ink2 dark:text-bone/60" data-i18n data-en="No. 9, Ground Floor, K.C. Puttanna Road, Near Bright Future School, Doddamavalli, Bengaluru — 560004">ನಂ.9, ನೆಲ ಮಹಡಿ, ಕೆ.ಸಿ. ಪುಟ್ಟಣ್ಣ ರಸ್ತೆ, ಬ್ರೈಟ್ ಫ್ಯೂಚರ್ ಸ್ಕೂಲ್ ಹತ್ತಿರ, ದೊಡ್ಡಮಾವಳ್ಳಿ, ಬೆಂಗಳೂರು — 560004</span></span>
           </a>
           <div class="flex gap-4">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.5A2 2 0 0 1 4.5 3.5h2.1a1 1 0 0 1 .98.78l.8 3.4a1 1 0 0 1-.28.95L6.8 10.3a14 14 0 0 0 6.9 6.9l1.67-1.6a1 1 0 0 1 .95-.28l3.4.8a1 1 0 0 1 .78.98v2.1a2 2 0 0 1-2 2A17.5 17.5 0 0 1 2.5 5.5Z"/></svg></span>
-            <span><span class="block font-semibold text-ink dark:text-bone">Phone &amp; WhatsApp</span><span class="text-sm text-ink2 dark:text-bone/60"><a href="tel:+919380440967" class="hover:text-ember">+91 93804 40967</a> · <a href="tel:+918667862460" class="hover:text-ember">+91 86678 62460</a></span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone" data-i18n data-en="Phone &amp; WhatsApp">ಫೋನ್ ಮತ್ತು ವಾಟ್ಸ್‌ಆ್ಯಪ್</span><span class="text-sm text-ink2 dark:text-bone/60"><a href="tel:+919380440967" class="hover:text-ember">+91 93804 40967</a> · <a href="tel:+918667862460" class="hover:text-ember">+91 86678 62460</a></span></span>
           </div>
           <div class="flex gap-4">
             <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2"/></svg></span>
-            <span><span class="block font-semibold text-ink dark:text-bone">Working hours</span><span class="text-sm text-ink2 dark:text-bone/60">Mon–Sat: 9:30 AM – 9:30 PM · Sun: 9:30 AM – 2:30 PM</span></span>
+            <span><span class="block font-semibold text-ink dark:text-bone" data-i18n data-en="Working hours">ಕೆಲಸದ ಸಮಯ</span><span class="text-sm text-ink2 dark:text-bone/60" data-i18n data-en="Mon–Sat: 9:30 AM – 9:30 PM · Sun: 9:30 AM – 2:30 PM">ಸೋಮ–ಶನಿ: ಬೆಳಿಗ್ಗೆ 9:30 – ರಾತ್ರಿ 9:30 · ಭಾನು: ಬೆಳಿಗ್ಗೆ 9:30 – ಮಧ್ಯಾಹ್ನ 2:30</span></span>
           </div>
         </div>
 
@@ -448,22 +417,22 @@
 
       <div data-reveal>
         <form id="contactForm" class="rounded-[2rem] border border-ink/10 dark:border-bone/10 bg-bone dark:bg-night p-8 sm:p-10 space-y-5">
-          <h3 class="font-display text-2xl font-semibold">Request a free quote</h3>
-          <div><label class="lbl">Full name</label><input type="text" name="name" required placeholder="Your name" class="inp" /></div>
-          <div><label class="lbl">Phone number</label><input type="tel" name="phone" required placeholder="+91 …" class="inp" /></div>
-          <div><label class="lbl">Service needed</label>
+          <h3 class="font-display text-2xl font-semibold" data-i18n data-en="Request a free quote">ಉಚಿತ ಕೋಟ್ ವಿನಂತಿಸಿ</h3>
+          <div><label class="lbl" data-i18n data-en="Full name">ಪೂರ್ಣ ಹೆಸರು</label><input type="text" name="name" required placeholder="ನಿಮ್ಮ ಹೆಸರು" data-en-ph="Your name" class="inp" /></div>
+          <div><label class="lbl" data-i18n data-en="Phone number">ಫೋನ್ ಸಂಖ್ಯೆ</label><input type="tel" name="phone" required placeholder="+91 …" class="inp" /></div>
+          <div><label class="lbl" data-i18n data-en="Service needed">ಬೇಕಾದ ಸೇವೆ</label>
             <select name="service" class="inp">
-              <option>Sun-Control Film (car / glass)</option>
-              <option>Paint Protection (PPF)</option>
-              <option>Frosted / Privacy Film</option>
-              <option>Wallpaper</option>
-              <option>Interior Decor</option>
-              <option>Other</option>
+              <option data-i18n data-en="Sun-Control Film (car / glass)">ಸನ್-ಕಂಟ್ರೋಲ್ ಫಿಲ್ಮ್ (ಕಾರು / ಗಾಜು)</option>
+              <option data-i18n data-en="Paint Protection (PPF)">ಪೇಂಟ್ ಪ್ರೊಟೆಕ್ಷನ್ (PPF)</option>
+              <option data-i18n data-en="Frosted / Privacy Film">ಫ್ರಾಸ್ಟೆಡ್ / ಪ್ರೈವಸಿ ಫಿಲ್ಮ್</option>
+              <option data-i18n data-en="Wallpaper">ವಾಲ್‌ಪೇಪರ್</option>
+              <option data-i18n data-en="Interior Decor">ಒಳಾಂಗಣ ಅಲಂಕಾರ</option>
+              <option data-i18n data-en="Other">ಇತರೆ</option>
             </select>
           </div>
-          <div><label class="lbl">Message</label><textarea name="message" rows="4" placeholder="Tell us about your car / home / office…" class="inp"></textarea></div>
-          <button type="submit" class="w-full rounded-full bg-ember text-paper py-4 font-semibold hover:bg-ember-600 transition">Send via WhatsApp</button>
-          <p class="text-center text-xs text-ink2/70 dark:text-bone/45">We'll never share your details. Powered by WhatsApp.</p>
+          <div><label class="lbl" data-i18n data-en="Message">ಸಂದೇಶ</label><textarea name="message" rows="4" placeholder="ನಿಮ್ಮ ಕಾರು / ಮನೆ / ಆಫೀಸ್ ಬಗ್ಗೆ ತಿಳಿಸಿ…" data-en-ph="Tell us about your car / home / office…" class="inp"></textarea></div>
+          <button type="submit" class="w-full rounded-full bg-ember text-paper py-4 font-semibold hover:bg-ember-600 transition" data-i18n data-en="Send via WhatsApp">ವಾಟ್ಸ್‌ಆ್ಯಪ್ ಮೂಲಕ ಕಳುಹಿಸಿ</button>
+          <p class="text-center text-xs text-ink2/70 dark:text-bone/45" data-i18n data-en="We'll never share your details. Powered by WhatsApp.">ನಿಮ್ಮ ವಿವರಗಳನ್ನು ನಾವು ಎಂದಿಗೂ ಹಂಚಿಕೊಳ್ಳುವುದಿಲ್ಲ. WhatsApp ನಿಂದ ಚಾಲಿತ.</p>
         </form>
       </div>
     </div>
@@ -477,45 +446,49 @@
           <span class="rounded-2xl bg-white px-2.5 py-2">
             <img src="images/logo.png" alt="Sri Krishna Decoration — KD logo" class="h-8 w-auto object-contain" />
           </span>
-          <span class="font-display text-lg font-semibold">Sri Krishna<br/>Decoration</span>
+          <span class="font-display text-lg font-semibold"><span data-i18n data-en="Sri Krishna">ಶ್ರೀ ಕೃಷ್ಣ</span><br/><span data-i18n data-en="Decoration">ಡೆಕೊರೇಶನ್</span></span>
         </div>
-        <p class="mt-5 text-sm text-bone/55 max-w-xs">Car &amp; glass films, wallpapers and interior decor in Bengaluru. Authorised Garware, 3M, LX Hausys &amp; Avery Dennison dealer.</p>
+        <p class="mt-5 text-sm text-bone/55 max-w-xs" data-i18n data-en="Car &amp; glass films, wallpapers and interior decor in Bengaluru. Authorised Garware, 3M, LX Hausys &amp; Avery Dennison dealer.">ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕಾರು ಮತ್ತು ಗಾಜಿನ ಫಿಲ್ಮ್, ವಾಲ್‌ಪೇಪರ್ ಮತ್ತು ಒಳಾಂಗಣ ಅಲಂಕಾರ. ಅಧಿಕೃತ ಗರ್‌ವೇರ್, 3M, LX Hausys ಮತ್ತು Avery Dennison ಡೀಲರ್.</p>
       </div>
       <div>
-        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Explore</h4>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember" data-i18n data-en="Explore">ಅನ್ವೇಷಿಸಿ</h4>
         <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
-          <li><a href="#services" class="hover:text-bone transition">Services</a></li>
-          <li><a href="#why" class="hover:text-bone transition">Why Us</a></li>
-          <li><a href="#gallery" class="hover:text-bone transition">Work</a></li>
-          <li><a href="#about" class="hover:text-bone transition">About</a></li>
-          <li><a href="#contact" class="hover:text-bone transition">Contact</a></li>
+          <li><a href="#services" class="hover:text-bone transition" data-i18n data-en="Services">ಸೇವೆಗಳು</a></li>
+          <li><a href="#why" class="hover:text-bone transition" data-i18n data-en="Why Us">ಏಕೆ ನಾವು</a></li>
+          <li><a href="#gallery" class="hover:text-bone transition" data-i18n data-en="Work">ಕೆಲಸ</a></li>
+          <li><a href="#reviews" class="hover:text-bone transition" data-i18n data-en="Reviews">ವಿಮರ್ಶೆಗಳು</a></li>
+          <li><a href="#about" class="hover:text-bone transition" data-i18n data-en="About">ನಮ್ಮ ಬಗ್ಗೆ</a></li>
+          <li><a href="#contact" class="hover:text-bone transition" data-i18n data-en="Contact">ಸಂಪರ್ಕ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Services</h4>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember" data-i18n data-en="Services">ಸೇವೆಗಳು</h4>
         <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
-          <li>Sun-Control Films</li><li>Paint Protection (PPF)</li><li>Frosted &amp; Privacy Films</li><li>Wallpapers</li><li>Interior Decor</li>
+          <li data-i18n data-en="Sun-Control Films">ಸನ್-ಕಂಟ್ರೋಲ್ ಫಿಲ್ಮ್‌ಗಳು</li>
+          <li data-i18n data-en="Paint Protection (PPF)">ಪೇಂಟ್ ಪ್ರೊಟೆಕ್ಷನ್ (PPF)</li>
+          <li data-i18n data-en="Frosted &amp; Privacy Films">ಫ್ರಾಸ್ಟೆಡ್ ಮತ್ತು ಪ್ರೈವಸಿ ಫಿಲ್ಮ್‌ಗಳು</li>
+          <li data-i18n data-en="Wallpapers">ವಾಲ್‌ಪೇಪರ್‌ಗಳು</li>
+          <li data-i18n data-en="Interior Decor">ಒಳಾಂಗಣ ಅಲಂಕಾರ</li>
         </ul>
       </div>
       <div>
-        <h4 class="text-xs tracking-[0.25em] uppercase text-ember">Contact</h4>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-ember" data-i18n data-en="Contact">ಸಂಪರ್ಕ</h4>
         <ul class="mt-4 space-y-2.5 text-sm text-bone/60">
-          <li>No.9, K.C. Puttanna Rd,<br/>Doddamavalli, Bengaluru — 560004</li>
+          <li data-i18n data-en="No.9, K.C. Puttanna Rd, Doddamavalli, Bengaluru — 560004">ನಂ.9, ಕೆ.ಸಿ. ಪುಟ್ಟಣ್ಣ ರಸ್ತೆ, ದೊಡ್ಡಮಾವಳ್ಳಿ, ಬೆಂಗಳೂರು — 560004</li>
           <li><a href="tel:+919380440967" class="hover:text-bone transition">+91 93804 40967</a></li>
           <li><a href="tel:+918667862460" class="hover:text-bone transition">+91 86678 62460</a></li>
-          <li>Mon–Sat · 9:30 AM – 9:30 PM</li>
+          <li data-i18n data-en="Mon–Sat · 9:30 AM – 9:30 PM">ಸೋಮ–ಶನಿ · ಬೆಳಿಗ್ಗೆ 9:30 – ರಾತ್ರಿ 9:30</li>
         </ul>
       </div>
     </div>
     <div class="border-t border-bone/10">
       <div class="mx-auto max-w-[1280px] px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-bone/45">
-        <span>© <span id="year"></span> Sri Krishna Decoration. All rights reserved.</span>
-        <span>Garware · 3M · LX Hausys · Avery Dennison Authorised</span>
+        <span>© <span id="year"></span> <span data-i18n data-en="Sri Krishna Decoration. All rights reserved.">ಶ್ರೀ ಕೃಷ್ಣ ಡೆಕೊರೇಶನ್. ಎಲ್ಲ ಹಕ್ಕುಗಳು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.</span></span>
+        <span data-i18n data-en="Garware · 3M · LX Hausys · Avery Dennison Authorised">ಗರ್‌ವೇರ್ · 3M · LX Hausys · Avery Dennison ಅಧಿಕೃತ</span>
       </div>
     </div>
   </footer>
 
-  <!-- floating whatsapp -->
   <a href="https://wa.me/919380440967" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
      class="fixed bottom-6 right-6 z-50 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-lg shadow-emerald-900/30 hover:scale-110 transition animate-bounce-slow">
     <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.94 9.94 0 0 0-8.5 15.07L2 22l5.05-1.32A9.94 9.94 0 1 0 12.04 2Zm5.8 14.2c-.24.68-1.42 1.32-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.78-4.17-4.93-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2.03.89 2.18.07.14.12.31.02.5-.09.2-.14.32-.27.49-.14.16-.29.37-.41.49-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.6-.13.25.09 1.57.74 1.84.87.27.14.45.2.51.31.07.12.07.66-.17 1.34Z"/></svg>
