@@ -1,8 +1,8 @@
-# Sri Krishna Decoration — Website
+# Shri Krishna Decoration — Website
 
-Modern, responsive website for **Sri Krishna Decoration**, Bengaluru — Car & Glass Films, Wallpapers & Interior Decor.
+Modern, responsive website for **Shri Krishna Decoration**, Bengaluru — Car & Glass Films, Wallpapers & Interior Decor.
 
-🔗 **Live:** https://lalit-rajpurohit.github.io/lax-dukan/
+🔗 **Live:** https://shrikrishnadecor.com
 
 ## Features
 - Light theme by default with a **dark mode toggle** (remembers your choice)
