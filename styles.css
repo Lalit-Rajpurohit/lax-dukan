@@ -6,6 +6,15 @@
 html { scroll-padding-top: 90px; }
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
+/* ---------- Simple ampersand ----------
+   Fraunces has a decorative '&' glyph; this face covers ONLY the
+   '&' character (U+0026) so headings render a plain, simple & . */
+@font-face {
+  font-family: 'SimpleAmp';
+  src: local('Segoe UI'), local('Arial'), local('Roboto'), local('Helvetica Neue'), local('Helvetica');
+  unicode-range: U+26;
+}
+
 /* ---------- Grain overlay ---------- */
 .grain {
   position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .045;
